@@ -61,16 +61,24 @@ nav {
   font-size: 1.5rem;
   color: var(--vert);
   letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.logo span {
+.logo em {
   color: var(--or);
   font-style: italic;
+}
+
+.logo img {
+  width: 50px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 2.5rem;
 }
 
