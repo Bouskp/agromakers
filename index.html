@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroMakers – Agriculture Vivante</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --vert: #2d5a1b;
+    --vert-clair: #4a8c2a;
+    --vert-pale: #e8f5e0;
+    --terre: #8b5e3c;
+    --terre-pale: #f5ede3;
+    --or: #c9a84c;
+    --or-pale: #fdf6e3;
+    --blanc: #fafaf7;
+    --gris: #6b7068;
+    --noir: #1a1f17;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--blanc);
+    color: var(--noir);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(250,250,247,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(45,90,27,0.1);
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--vert);
+    letter-spacing: -0.01em;
+  }
+
+  .logo span { color: var(--or); font-style: italic; }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--gris);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--vert); }
+
+  .btn-nav {
+    background: var(--vert);
+    color: white !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 2rem;
+    transition: background 0.2s !important;
+  }
+
+  .btn-nav:hover { background: var(--vert-clair) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5rem;
+  }
+
+  .hero-texte {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem 6rem 6rem;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--vert-pale);
+    color: var(--vert);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(45,90,27,0.2);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.1;
+    color: var(--noir);
+    margin-bottom: 1.5rem;
+  }
+
+  h1 em {
+    color: var(--vert);
+    font-style: italic;
+  }
+
+  .hero-texte p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gris);
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .btn-primaire {
+    background: var(--vert);
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+
+  .btn-primaire:hover { background: var(--vert-clair); transform: translateY(-2px); }
+
+  .btn-secondaire {
+    color: var(--vert);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.2s;
+  }
+
+  .btn-secondaire:hover { gap: 0.8rem; }
+
+  .hero-visuel {
+    position: relative;
+    overflow: hidden;
+    background: var(--vert-pale);
+  }
+
+  .hero-illustration {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* SVG illustration hero */
+  .hero-svg {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+  }
+
+  /* STATS */
+  .stats {
+    background: var(--vert);
+    padding: 3rem 6rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .stat {
+    text-align: center;
+    color: white;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--or);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 0.3rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* SECTION GÉNÉRIQUE */
+  section { padding: 6rem 6rem; }
+
+  .section-titre {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--noir);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .section-titre em { color: var(--vert); font-style: italic; }
+
+  .section-sous-titre {
+    font-size: 1rem;
+    color: var(--gris);
+    line-height: 1.7;
+    max-width: 560px;
+    margin-bottom: 3rem;
+  }
+
+  /* PRATIQUES */
+  .pratiques-grille {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .pratique-carte {
+    background: var(--blanc);
+    border: 1px solid rgba(45,90,27,0.12);
+    border-radius: 1.2rem;
+    padding: 2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pratique-carte::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: var(--vert-clair);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .pratique-carte:hover::before { transform: scaleX(1); }
+  .pratique-carte:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(45,90,27,0.1); }
+
+  .pratique-icone {
+    width: 48px; height: 48px;
+    background: var(--vert-pale);
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .pratique-carte h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: var(--noir);
+  }
+
+  .pratique-carte p {
+    font-size: 0.9rem;
+    color: var(--gris);
+    line-height: 1.65;
+  }
+
+  /* CULTURES FEATURED */
+  .cultures { background: var(--vert-pale); }
+
+  .cultures-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .culture-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .culture-item {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid rgba(45,90,27,0.1);
+    transition: transform 0.2s;
+    cursor: default;
+  }
+
+  .culture-item:hover { transform: translateX(6px); }
+
+  .culture-emoji { font-size: 1.8rem; }
+
+  .culture-info h4 {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--noir);
+    margin-bottom: 0.1rem;
+  }
+
+  .culture-info span {
+    font-size: 0.8rem;
+    color: var(--gris);
+  }
+
+  .culture-saison {
+    margin-left: auto;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.7rem;
+    border-radius: 2rem;
+  }
+
+  .saison-printemps { background: #e8f5e0; color: var(--vert); }
+  .saison-ete { background: #fdf6e3; color: #8b6914; }
+  .saison-automne { background: #f5ede3; color: var(--terre); }
+  .saison-hiver { background: #eaf3fb; color: #2563a8; }
+
+  .cultures-visuel {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background: var(--vert);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* CYCLE */
+  .cycle { background: var(--or-pale); }
+
+  .cycle-etapes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 1rem;
+    position: relative;
+  }
+
+  .cycle-etapes::before {
+    content: '';
+    position: absolute;
+    top: 2.5rem;
+    left: 12.5%;
+    right: 12.5%;
+    height: 2px;
+    background: linear-gradient(to right, var(--vert) 0%, var(--or) 100%);
+    z-index: 0;
+  }
+
+  .etape {
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .etape-num {
+    width: 5rem; height: 5rem;
+    background: white;
+    border: 3px solid var(--vert);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--vert);
+    margin: 0 auto 1.2rem;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .etape:hover .etape-num { background: var(--vert); color: white; }
+
+  .etape h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--noir);
+    margin-bottom: 0.4rem;
+  }
+
+  .etape p {
+    font-size: 0.82rem;
+    color: var(--gris);
+    line-height: 1.5;
+  }
+
+  /* TEMOIGNAGES */
+  .temoignages-grille {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .temoignage {
+    background: var(--blanc);
+    border: 1px solid rgba(45,90,27,0.1);
+    border-radius: 1.2rem;
+    padding: 2rem;
+  }
+
+  .temoignage-texte {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--noir);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .temoignage-auteur {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: white;
+  }
+
+  .avatar-vert { background: var(--vert); }
+  .avatar-terre { background: var(--terre); }
+  .avatar-or { background: #8b6914; }
+
+  .auteur-nom { font-weight: 500; font-size: 0.9rem; }
+  .auteur-lieu { font-size: 0.78rem; color: var(--gris); }
+
+  /* MEMBERSHIP */
+  .membership {
+    background: var(--blanc);
+    padding: 6rem 6rem;
+  }
+
+  .membership-intro { margin-bottom: 4rem; }
+
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .plan {
+    background: white;
+    border: 1.5px solid rgba(45,90,27,0.12);
+    border-radius: 1.4rem;
+    padding: 2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+
+  .plan:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(45,90,27,0.1); }
+
+  .plan-vedette {
+    border: 2px solid var(--vert);
+    background: var(--vert-pale);
+  }
+
+  .plan-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gris);
+    background: rgba(45,90,27,0.07);
+    padding: 0.25rem 0.7rem;
+    border-radius: 2rem;
+    width: fit-content;
+  }
+
+  .plan-badge-vedette {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--vert);
+    background: rgba(45,90,27,0.15);
+    padding: 0.25rem 0.7rem;
+    border-radius: 2rem;
+    width: fit-content;
+  }
+
+  .plan-nom {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--noir);
+  }
+
+  .plan-prix {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--vert);
+  }
+
+  .plan-prix span {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--gris);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .plan-avantages {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .plan-avantages li {
+    font-size: 0.88rem;
+    color: var(--noir);
+  }
+
+  .plan-avantages li.inactif {
+    color: var(--gris);
+    opacity: 0.55;
+  }
+
+  .plan-btn {
+    background: transparent;
+    border: 1.5px solid var(--vert);
+    color: var(--vert);
+    padding: 0.75rem 1.2rem;
+    border-radius: 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .plan-btn:hover { background: var(--vert); color: white; }
+
+  .plan-btn-vedette {
+    background: var(--vert);
+    color: white;
+  }
+
+  .plan-btn-vedette:hover { background: var(--vert-clair); }
+
+  .plan.selectionne {
+    border-color: var(--vert);
+    box-shadow: 0 0 0 3px rgba(45,90,27,0.15);
+  }
+
+  /* FORM */
+  .membership-form-wrap {
+    background: white;
+    border: 1px solid rgba(45,90,27,0.12);
+    border-radius: 1.5rem;
+    padding: 2.5rem 3rem;
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+    display: none;
+  }
+
+  .membership-form-wrap.visible { display: block; }
+
+  .form-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(45,90,27,0.1);
+  }
+
+  .form-icon {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .form-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--noir);
+    margin-bottom: 0.3rem;
+  }
+
+  .form-header p {
+    font-size: 0.88rem;
+    color: var(--gris);
+  }
+
+  .form-grille {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .champ {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .champ-plein { grid-column: 1 / -1; }
+
+  .champ label {
+    font-size: 0.83rem;
+    font-weight: 500;
+    color: var(--noir);
+    letter-spacing: 0.01em;
+  }
+
+  .champ input,
+  .champ select,
+  .champ textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(45,90,27,0.2);
+    border-radius: 0.7rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem;
+    color: var(--noir);
+    background: var(--blanc);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+  }
+
+  .champ input:focus,
+  .champ select:focus,
+  .champ textarea:focus {
+    border-color: var(--vert);
+    box-shadow: 0 0 0 3px rgba(45,90,27,0.1);
+  }
+
+  .champ textarea { resize: vertical; min-height: 90px; }
+
+  .label-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--gris);
+    cursor: pointer;
+    font-weight: 400 !important;
+  }
+
+  .label-check input[type="checkbox"] {
+    width: 16px; height: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: var(--vert);
+    padding: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+  .label-check a { color: var(--vert); }
+
+  .form-actions {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-soumettre {
+    background: var(--vert);
+    color: white;
+    border: none;
+    padding: 0.9rem 2.2rem;
+    border-radius: 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-soumettre:hover { background: var(--vert-clair); transform: translateY(-1px); }
+
+  .form-note {
+    font-size: 0.82rem;
+    color: var(--gris);
+  }
+
+  .champ.erreur input,
+  .champ.erreur select,
+  .champ.erreur textarea {
+    border-color: #c94020;
+    box-shadow: 0 0 0 3px rgba(201,64,32,0.1);
+  }
+
+  .erreur-msg {
+    font-size: 0.75rem;
+    color: #c94020;
+    margin-top: 0.1rem;
+  }
+
+  /* CONFIRMATION */
+  .confirmation {
+    display: none;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .confirmation.visible { display: block; }
+
+  .confirm-icone { font-size: 3rem; margin-bottom: 1rem; }
+
+  .confirmation h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--vert);
+    margin-bottom: 0.8rem;
+  }
+
+  .confirmation p { color: var(--gris); line-height: 1.7; }
+
+  /* NEWSLETTER */
+  .newsletter {
+    background: var(--vert);
+    text-align: center;
+    padding: 5rem 6rem;
+  }
+
+  .newsletter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 0.8rem;
+  }
+
+  .newsletter p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 0.8rem;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    padding: 0.9rem 1.2rem;
+    border: none;
+    border-radius: 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .newsletter-form input::placeholder { color: rgba(255,255,255,0.55); }
+
+  .newsletter-form button {
+    background: var(--or);
+    color: var(--noir);
+    border: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .newsletter-form button:hover { background: #e0bf60; }
+
+  /* FOOTER */
+  footer {
+    background: var(--noir);
+    padding: 4rem 6rem 2rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-logo span { color: var(--or); font-style: italic; }
+
+  .footer-desc {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    max-width: 280px;
+  }
+
+  .footer-col h5 {
+    color: white;
+    font-weight: 500;
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.5rem; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: white; }
+
+  .footer-bas {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes menuSlide {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-texte > * { animation: fadeUp 0.7s ease both; }
+  .hero-texte > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-texte > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-texte > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-texte > *:nth-child(4) { animation-delay: 0.55s; }
+
+  /* HAMBURGER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+    z-index: 200;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--vert);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .hamburger.ouvert span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.ouvert span:nth-child(2) { opacity: 0; }
+  .hamburger.ouvert span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* MENU MOBILE */
+  .nav-mobile {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(250,250,247,0.98);
+    backdrop-filter: blur(16px);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .nav-mobile.ouvert {
+    display: flex;
+    animation: menuSlide 0.3s ease both;
+  }
+
+  .nav-mobile a {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--noir);
+    text-decoration: none;
+    font-style: italic;
+    transition: color 0.2s;
+  }
+
+  .nav-mobile a:hover { color: var(--vert); }
+
+  .nav-mobile .btn-nav-mobile {
+    background: var(--vert);
+    color: white !important;
+    padding: 0.8rem 2.5rem;
+    border-radius: 2rem;
+    font-style: normal;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  /* ===== TABLETTE (max 1024px) ===== */
+  @media (max-width: 1024px) {
+    nav { padding: 1.2rem 2.5rem; }
+    nav ul { gap: 1.5rem; }
+    nav a { font-size: 0.8rem; }
+
+    .hero-texte { padding: 5rem 3rem 5rem 3rem; }
+    .stats { padding: 2.5rem 3rem; }
+    section { padding: 5rem 3rem; }
+
+    .pratiques-grille { grid-template-columns: repeat(2, 1fr); }
+    .temoignages-grille { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .footer { padding: 3rem 3rem 2rem; }
+
+    .cycle-etapes::before {
+      left: 12%;
+      right: 12%;
+    }
+
+    /* Membership tablette */
+    .membership { padding: 5rem 3rem; }
+    .plans { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .plan { padding: 1.5rem 1.2rem; }
+    .plan-prix { font-size: 1.8rem; }
+    .membership-form-wrap { padding: 2rem 2.5rem; }
+  }
+
+  /* ===== MOBILE (max 768px) ===== */
+  @media (max-width: 768px) {
+    nav {
+      padding: 1rem 1.2rem;
+    }
+
+    nav ul { display: none; }
+    .hamburger { display: flex; }
+
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding-top: 4rem;
+    }
+
+    .hero-texte {
+      padding: 2.5rem 1.5rem 2rem;
+      order: 1;
+    }
+
+    .hero-texte p { max-width: 100%; }
+
+    .hero-visuel {
+      min-height: 260px;
+      order: 2;
+    }
+
+    .hero-svg { min-height: 260px; }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+
+    .btn-primaire { width: 100%; text-align: center; }
+
+    .stats {
+      grid-template-columns: 1fr 1fr;
+      padding: 2rem 1.5rem;
+      gap: 1.5rem;
+    }
+
+    .stat-num { font-size: 2rem; }
+
+    section { padding: 3rem 1.5rem; }
+
+    .pratiques-grille { grid-template-columns: 1fr; gap: 1rem; }
+
+    .cultures-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .cultures-visuel {
+      aspect-ratio: 16/9;
+      order: -1;
+    }
+
+    .culture-item { padding: 1rem 1.2rem; }
+    .culture-saison { display: none; }
+
+    .cycle-etapes {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 1rem;
+    }
+
+    .cycle-etapes::before { display: none; }
+
+    .temoignages-grille { grid-template-columns: 1fr; }
+
+    .newsletter { padding: 3rem 1.5rem; }
+
+    .newsletter h2 { font-size: 1.8rem; }
+
+    .newsletter-form {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button { width: 100%; }
+
+    footer { padding: 3rem 1.5rem 2rem; }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .footer-bas {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+
+    .section-sous-titre { max-width: 100%; }
+
+    /* Membership mobile */
+    .membership { padding: 3rem 1.5rem; }
+    .plans { grid-template-columns: 1fr; gap: 1rem; }
+    .plan { padding: 1.5rem; }
+    .plan-vedette { order: -1; }
+    .membership-form-wrap { padding: 1.5rem; margin: 0; }
+    .form-header { flex-direction: column; gap: 0.6rem; }
+    .form-grille { grid-template-columns: 1fr; gap: 1rem; }
+    .champ-plein { grid-column: 1; }
+    .form-actions { flex-direction: column; align-items: stretch; gap: 0.8rem; }
+    .btn-soumettre { width: 100%; text-align: center; }
+    .form-note { text-align: center; }
+  }
+
+  /* ===== TRÈS PETIT MOBILE (max 420px) ===== */
+  @media (max-width: 420px) {
+    .stats { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .stat-num { font-size: 1.6rem; }
+    .stat-label { font-size: 0.75rem; }
+
+    .cycle-etapes { grid-template-columns: 1fr; }
+
+    .pratique-carte { padding: 1.5rem; }
+
+    h1 { font-size: 2.2rem; }
+
+    .badge { font-size: 0.72rem; }
+
+    .culture-item { gap: 0.8rem; }
+    .culture-emoji { font-size: 1.4rem; }
+
+    /* Membership très petit mobile */
+    .plan-prix { font-size: 1.8rem; }
+    .plan-avantages li { font-size: 0.82rem; }
+    .membership-form-wrap { padding: 1.2rem; }
+    .form-header h3 { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="logo">Agro<span>Makers</span></div>
+  <ul>
+    <li><a href="#pratiques">Pratiques</a></li>
+    <li><a href="#cultures">Cultures</a></li>
+    <li><a href="#cycle">Le Cycle</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="#membership">Membership</a></li>
+    <li><a href="#newsletter" class="btn-nav">Rejoindre</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MENU MOBILE -->
+<div class="nav-mobile" id="navMobile">
+  <a href="#pratiques" class="nav-mobile-lien">Pratiques</a>
+  <a href="#cultures" class="nav-mobile-lien">Cultures</a>
+  <a href="#cycle" class="nav-mobile-lien">Le Cycle</a>
+  <a href="#temoignages" class="nav-mobile-lien">Témoignages</a>
+  <a href="#membership" class="nav-mobile-lien">Membership</a>
+  <a href="#newsletter" class="btn-nav-mobile nav-mobile-lien">Rejoindre</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="padding: 0;">
+  <div class="hero-texte">
+    <span class="badge">🌍 La plateforme de l'agriculture africaine</span>
+    <h1>Construire l'avenir de l'<em>agriculture</em> africaine</h1>
+    <p>AgroMakers connecte, outille et valorise les acteurs de l'agriculture africaine — agriculteurs, agripreneurs, chercheurs et porteurs de projets — pour transformer durablement nos systèmes alimentaires.</p>
+    <div class="hero-actions">
+      <a href="#pratiques" class="btn-primaire">Découvrir nos pratiques</a>
+      <a href="#cycle" class="btn-secondaire">Le cycle des cultures →</a>
+    </div>
+  </div>
+  <div class="hero-visuel">
+    <svg class="hero-svg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+      <!-- Ciel -->
+      <rect width="600" height="700" fill="#c8e6a0"/>
+      <!-- Collines -->
+      <ellipse cx="150" cy="550" rx="280" ry="180" fill="#4a8c2a"/>
+      <ellipse cx="500" cy="580" rx="250" ry="160" fill="#3a7a1a"/>
+      <ellipse cx="300" cy="600" rx="400" ry="140" fill="#2d5a1b"/>
+      <!-- Sol -->
+      <rect y="580" width="600" height="120" fill="#5c3d1e"/>
+      <rect y="620" width="600" height="80" fill="#4a2f12"/>
+
+      <!-- Sillons -->
+      <path d="M0 640 Q150 630 300 640 Q450 650 600 640" stroke="#3a2510" stroke-width="3" fill="none" opacity="0.5"/>
+      <path d="M0 660 Q150 650 300 660 Q450 670 600 660" stroke="#3a2510" stroke-width="3" fill="none" opacity="0.5"/>
+
+      <!-- Soleil -->
+      <circle cx="480" cy="100" r="55" fill="#f5c842" opacity="0.9"/>
+      <circle cx="480" cy="100" r="70" fill="#f5c842" opacity="0.15"/>
+
+      <!-- Nuages -->
+      <g opacity="0.85">
+        <ellipse cx="100" cy="80" rx="50" ry="22" fill="white"/>
+        <ellipse cx="130" cy="70" rx="35" ry="20" fill="white"/>
+        <ellipse cx="70" cy="70" rx="30" ry="18" fill="white"/>
+      </g>
+      <g opacity="0.7">
+        <ellipse cx="350" cy="130" rx="40" ry="18" fill="white"/>
+        <ellipse cx="375" cy="120" rx="28" ry="16" fill="white"/>
+        <ellipse cx="325" cy="122" rx="25" ry="14" fill="white"/>
+      </g>
+
+      <!-- Grand arbre gauche -->
+      <rect x="70" y="380" width="18" height="160" fill="#5c3d1e"/>
+      <ellipse cx="79" cy="350" rx="55" ry="60" fill="#2d5a1b"/>
+      <ellipse cx="55" cy="370" rx="38" ry="45" fill="#3a7a1a"/>
+      <ellipse cx="105" cy="375" rx="35" ry="40" fill="#4a8c2a"/>
+
+      <!-- Petit arbre droite -->
+      <rect x="490" y="450" width="12" height="110" fill="#5c3d1e"/>
+      <ellipse cx="496" cy="420" rx="38" ry="45" fill="#2d5a1b"/>
+      <ellipse cx="475" cy="438" rx="28" ry="32" fill="#3a7a1a"/>
+      <ellipse cx="515" cy="440" rx="25" ry="30" fill="#4a8c2a"/>
+
+      <!-- Rangées de blé/céréales -->
+      <g fill="#c9a84c">
+        <!-- Tiges -->
+        <rect x="140" y="540" width="4" height="60" rx="2"/>
+        <rect x="160" y="535" width="4" height="65" rx="2"/>
+        <rect x="180" y="542" width="4" height="58" rx="2"/>
+        <rect x="200" y="538" width="4" height="62" rx="2"/>
+        <rect x="220" y="540" width="4" height="60" rx="2"/>
+        <rect x="240" y="535" width="4" height="65" rx="2"/>
+        <rect x="260" y="543" width="4" height="57" rx="2"/>
+        <rect x="280" y="539" width="4" height="61" rx="2"/>
+        <rect x="300" y="540" width="4" height="60" rx="2"/>
+        <rect x="320" y="534" width="4" height="66" rx="2"/>
+        <rect x="340" y="542" width="4" height="58" rx="2"/>
+        <rect x="360" y="537" width="4" height="63" rx="2"/>
+        <rect x="380" y="540" width="4" height="60" rx="2"/>
+        <rect x="400" y="536" width="4" height="64" rx="2"/>
+        <rect x="420" y="541" width="4" height="59" rx="2"/>
+        <rect x="440" y="538" width="4" height="62" rx="2"/>
+      </g>
+      <!-- Épis -->
+      <g fill="#e0bf60" opacity="0.9">
+        <ellipse cx="142" cy="537" rx="5" ry="12"/>
+        <ellipse cx="162" cy="532" rx="5" ry="12"/>
+        <ellipse cx="182" cy="539" rx="5" ry="12"/>
+        <ellipse cx="202" cy="535" rx="5" ry="12"/>
+        <ellipse cx="222" cy="537" rx="5" ry="12"/>
+        <ellipse cx="242" cy="532" rx="5" ry="12"/>
+        <ellipse cx="262" cy="540" rx="5" ry="12"/>
+        <ellipse cx="282" cy="536" rx="5" ry="12"/>
+        <ellipse cx="302" cy="537" rx="5" ry="12"/>
+        <ellipse cx="322" cy="531" rx="5" ry="12"/>
+        <ellipse cx="342" cy="539" rx="5" ry="12"/>
+        <ellipse cx="362" cy="534" rx="5" ry="12"/>
+        <ellipse cx="382" cy="537" rx="5" ry="12"/>
+        <ellipse cx="402" cy="533" rx="5" ry="12"/>
+        <ellipse cx="422" cy="538" rx="5" ry="12"/>
+        <ellipse cx="442" cy="535" rx="5" ry="12"/>
+      </g>
+
+      <!-- Maison ferme -->
+      <rect x="230" y="420" width="140" height="120" fill="#f5ede3"/>
+      <rect x="230" y="420" width="140" height="120" fill="none" stroke="#5c3d1e" stroke-width="2"/>
+      <!-- Toit -->
+      <polygon points="220,420 380,420 300,340" fill="#c9a84c"/>
+      <polygon points="220,420 380,420 300,340" fill="none" stroke="#8b6914" stroke-width="2"/>
+      <!-- Porte -->
+      <rect x="285" y="490" width="30" height="50" rx="3" fill="#5c3d1e"/>
+      <!-- Fenêtres -->
+      <rect x="240" y="440" width="30" height="30" rx="2" fill="#c8e6a0" stroke="#5c3d1e" stroke-width="1.5"/>
+      <rect x="330" y="440" width="30" height="30" rx="2" fill="#c8e6a0" stroke="#5c3d1e" stroke-width="1.5"/>
+      <!-- Cheminée -->
+      <rect x="320" y="355" width="20" height="35" fill="#8b5e3c"/>
+      <!-- Fumée -->
+      <path d="M330 355 Q325 330 335 310 Q340 295 330 280" stroke="rgba(255,255,255,0.6)" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+      <!-- Oiseaux lointains -->
+      <path d="M200 180 Q210 170 220 180" stroke="#2d5a1b" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M215 185 Q225 175 235 185" stroke="#2d5a1b" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M250 165 Q260 155 270 165" stroke="#2d5a1b" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+
+      <rect x="20" y="300" width="100" height="32" rx="16" fill="rgba(45,90,27,0.85)"/>
+      <text x="70" y="321" text-anchor="middle" fill="white" font-size="12" font-family="Georgia, serif" font-style="italic">Made in Africa</text>
+
+      <rect x="480" y="280" width="105" height="32" rx="16" fill="rgba(201,168,76,0.9)"/>
+      <text x="532" y="301" text-anchor="middle" fill="#2d1a00" font-size="12" font-family="Georgia, serif" font-style="italic">Agri du futur</text>
+    </svg>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <span class="stat-num">8 500</span>
+    <div class="stat-label">Membres actifs en Afrique</div>
+  </div>
+  <div class="stat">
+    <span class="stat-num">42</span>
+    <div class="stat-label">Pays représentés</div>
+  </div>
+  <div class="stat">
+    <span class="stat-num">320+</span>
+    <div class="stat-label">Projets agricoles soutenus</div>
+  </div>
+  <div class="stat">
+    <span class="stat-num">60 %</span>
+    <div class="stat-label">De membres sont des femmes</div>
+  </div>
+</div>
+
+<!-- PRATIQUES -->
+<section id="pratiques">
+  <div class="badge">Ce que nous offrons</div>
+  <h2 class="section-titre">Une plateforme pensée pour <em>l'Afrique</em></h2>
+  <p class="section-sous-titre">AgroMakers propose des outils, des ressources et un réseau adaptés aux réalités du terrain africain — du petit exploitant au grand agripreneur.</p>
+
+  <div class="pratiques-grille">
+    <div class="pratique-carte">
+      <div class="pratique-icone">🤝</div>
+      <h3>Mise en réseau</h3>
+      <p>Connectez-vous à des milliers d'agriculteurs, coopératives, investisseurs et partenaires à travers toute l'Afrique subsaharienne, sahélienne et côtière.</p>
+    </div>
+    <div class="pratique-carte">
+      <div class="pratique-icone">📱</div>
+      <h3>Ressources numériques</h3>
+      <p>Guides techniques, vidéos en langues locales, fiches pratiques adaptées aux cultures africaines et aux conditions climatiques locales — accessibles hors ligne.</p>
+    </div>
+    <div class="pratique-carte">
+      <div class="pratique-icone">💧</div>
+      <h3>Gestion de l'eau & du climat</h3>
+      <p>Solutions concrètes pour faire face aux défis de la pluviométrie irrégulière : irrigation goutte-à-goutte, conservation des sols, zaï, demi-lunes et cordons pierreux.</p>
+    </div>
+    <div class="pratique-carte">
+      <div class="pratique-icone">📈</div>
+      <h3>Accès aux marchés</h3>
+      <p>Connexion directe avec les acheteurs, les marchés locaux et régionaux, et les circuits d'exportation pour valoriser votre production au juste prix.</p>
+    </div>
+    <div class="pratique-carte">
+      <div class="pratique-icone">🎓</div>
+      <h3>Formation & accompagnement</h3>
+      <p>Webinaires, ateliers en présentiel, mentorat par des experts africains et internationaux pour monter en compétences et professionnaliser votre exploitation.</p>
+    </div>
+    <div class="pratique-carte">
+      <div class="pratique-icone">💰</div>
+      <h3>Financement & investissement</h3>
+      <p>Accès à des opportunités de financement : subventions, microcrédits agricoles, fonds d'impact et mise en relation avec des investisseurs engagés dans l'agri africaine.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURES -->
+<section id="cultures" class="cultures">
+  <div class="cultures-layout">
+    <div>
+      <div class="badge">Cultures phares</div>
+      <h2 class="section-titre">Les richesses <em>agricoles</em> africaines</h2>
+      <p class="section-sous-titre">Du Sahel aux zones tropicales, l'Afrique regorge de cultures stratégiques que AgroMakers accompagne à chaque étape — de la semence à la vente.</p>
+
+      <div class="culture-liste">
+        <div class="culture-item">
+          <span class="culture-emoji">🌾</span>
+          <div class="culture-info">
+            <h4>Mil & sorgho</h4>
+            <span>Cultures résilientes du Sahel, piliers de la sécurité alimentaire</span>
+          </div>
+          <span class="culture-saison saison-ete">Sahel</span>
+        </div>
+        <div class="culture-item">
+          <span class="culture-emoji">🍫</span>
+          <div class="culture-info">
+            <h4>Cacao & café</h4>
+            <span>Cultures d'exportation à haute valeur, Côte d'Ivoire, Ghana, Éthiopie</span>
+          </div>
+          <span class="culture-saison saison-ete">Tropical</span>
+        </div>
+        <div class="culture-item">
+          <span class="culture-emoji">🥜</span>
+          <div class="culture-info">
+            <h4>Arachide & niébé</h4>
+            <span>Légumineuses fixatrices d'azote, essentielles aux rotations africaines</span>
+          </div>
+          <span class="culture-saison saison-printemps">Toute zone</span>
+        </div>
+        <div class="culture-item">
+          <span class="culture-emoji">🍠</span>
+          <div class="culture-info">
+            <h4>Manioc & igname</h4>
+            <span>Tubercules stratégiques, sécurité alimentaire en Afrique centrale et de l'Ouest</span>
+          </div>
+          <span class="culture-saison saison-automne">Humide</span>
+        </div>
+        <div class="culture-item">
+          <span class="culture-emoji">🌿</span>
+          <div class="culture-info">
+            <h4>Moringa & plantes médicinales</h4>
+            <span>Cultures à forte valeur nutritionnelle et économique en plein essor</span>
+          </div>
+          <span class="culture-saison saison-printemps">Toute zone</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cultures-visuel">
+      <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <!-- Fond champ -->
+        <rect width="480" height="360" fill="#3a7a1a"/>
+        <rect y="250" width="480" height="110" fill="#5c3d1e"/>
+        <rect y="290" width="480" height="70" fill="#4a2f12"/>
+
+        <!-- Rangées légumes -->
+        <g>
+          <!-- Rangée tomates -->
+          <circle cx="60" cy="200" r="22" fill="#e85d3a" opacity="0.95"/>
+          <circle cx="60" cy="200" r="14" fill="#c94020"/>
+          <circle cx="100" cy="195" r="20" fill="#e85d3a"/>
+          <circle cx="140" cy="202" r="18" fill="#c94020"/>
+          <!-- Tiges tomates -->
+          <rect x="57" y="222" width="6" height="30" fill="#2d5a1b"/>
+          <rect x="97" y="215" width="6" height="35" fill="#2d5a1b"/>
+          <rect x="137" y="220" width="6" height="30" fill="#2d5a1b"/>
+          <!-- Feuilles -->
+          <ellipse cx="45" cy="215" rx="18" ry="10" fill="#4a8c2a" transform="rotate(-30 45 215)"/>
+          <ellipse cx="75" cy="215" rx="18" ry="10" fill="#4a8c2a" transform="rotate(30 75 215)"/>
+        </g>
+
+        <!-- Rangée carottes -->
+        <g>
+          <path d="M200 260 L207 200 L214 260 Z" fill="#e8892a"/>
+          <path d="M220 260 L228 195 L235 260 Z" fill="#e8892a"/>
+          <path d="M240 260 L248 205 L255 260 Z" fill="#e8892a"/>
+          <path d="M260 260 L267 198 L274 260 Z" fill="#e8892a"/>
+          <!-- Fanes -->
+          <path d="M207 200 Q195 175 200 160" stroke="#4a8c2a" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M228 195 Q220 165 228 150" stroke="#4a8c2a" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M248 205 Q240 175 248 160" stroke="#4a8c2a" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M267 198 Q260 170 265 155" stroke="#4a8c2a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </g>
+
+        <!-- Épis maïs -->
+        <g>
+          <rect x="340" y="170" width="8" height="90" fill="#4a8c2a"/>
+          <rect x="365" y="160" width="8" height="100" fill="#4a8c2a"/>
+          <rect x="390" y="165" width="8" height="95" fill="#4a8c2a"/>
+          <rect x="415" y="155" width="8" height="105" fill="#4a8c2a"/>
+          <!-- Épis -->
+          <rect x="337" y="195" width="14" height="35" rx="7" fill="#f5c842"/>
+          <rect x="362" y="185" width="14" height="35" rx="7" fill="#f5c842"/>
+          <rect x="387" y="190" width="14" height="35" rx="7" fill="#e0b030"/>
+          <rect x="412" y="180" width="14" height="35" rx="7" fill="#f5c842"/>
+          <!-- Feuilles maïs -->
+          <path d="M344 210 Q360 195 370 200" stroke="#2d5a1b" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M369 200 Q385 185 395 190" stroke="#2d5a1b" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M394 195 Q410 180 420 185" stroke="#2d5a1b" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </g>
+
+        <!-- Soleil haut -->
+        <circle cx="420" cy="50" r="35" fill="#f5c842" opacity="0.85"/>
+        <circle cx="420" cy="50" r="48" fill="#f5c842" opacity="0.15"/>
+
+        <!-- Nuages -->
+        <ellipse cx="80" cy="40" rx="40" ry="16" fill="rgba(255,255,255,0.8)"/>
+        <ellipse cx="108" cy="32" rx="28" ry="14" fill="rgba(255,255,255,0.8)"/>
+        <ellipse cx="55" cy="36" rx="22" ry="12" fill="rgba(255,255,255,0.8)"/>
+
+        <!-- Texte overlay -->
+        <rect x="20" y="300" width="150" height="46" rx="10" fill="rgba(45,90,27,0.9)"/>
+        <text x="95" y="320" text-anchor="middle" fill="#f5c842" font-size="11" font-family="Georgia, serif">Cultures diversifiées</text>
+        <text x="95" y="338" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="10" font-family="Georgia, serif">En harmonie avec les saisons</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- CYCLE -->
+<section id="cycle" class="cycle">
+  <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+    <div class="badge">Notre approche</div>
+    <h2 class="section-titre">Un accompagnement <em>complet</em></h2>
+    <p class="section-sous-titre">AgroMakers vous accompagne à chaque étape de votre parcours d'agripreneur africain, du démarrage à la montée en échelle.</p>
+  </div>
+
+  <div class="cycle-etapes" style="margin-top: 3rem;">
+    <div class="etape">
+      <div class="etape-num">1</div>
+      <h4>Rejoindre la communauté</h4>
+      <p>Créez votre profil, rejoignez des groupes thématiques et entrez en contact avec des pairs dans votre pays et sur tout le continent.</p>
+    </div>
+    <div class="etape">
+      <div class="etape-num">2</div>
+      <h4>Se former & apprendre</h4>
+      <p>Accédez à des contenus adaptés au contexte africain : techniques locales, gestion climatique, entrepreneuriat agricole et transformation.</p>
+    </div>
+    <div class="etape">
+      <div class="etape-num">3</div>
+      <h4>Développer son projet</h4>
+      <p>Bénéficiez du soutien d'experts, de mentorat, d'outils de gestion et d'une mise en relation avec des financeurs et partenaires stratégiques.</p>
+    </div>
+    <div class="etape">
+      <div class="etape-num">4</div>
+      <h4>Impacter & rayonner</h4>
+      <p>Devenez un acteur de référence, partagez votre expertise, formez à votre tour et contribuez à la transformation agricole du continent.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section id="temoignages">
+  <div class="badge">Ils témoignent</div>
+  <h2 class="section-titre">Des agripreneurs <em>africains</em> qui réussissent</h2>
+  <p class="section-sous-titre">De Dakar à Nairobi, d'Abidjan à Kampala — des membres AgroMakers partagent comment la plateforme a transformé leur activité agricole.</p>
+
+  <div class="temoignages-grille">
+    <div class="temoignage">
+      <p class="temoignage-texte">Grâce à AgroMakers, j'ai pu accéder à un financement pour mon exploitation maraîchère et tripler ma production en un an. Le réseau de mentors est exceptionnel.</p>
+      <div class="temoignage-auteur">
+        <div class="avatar avatar-vert">AF</div>
+        <div>
+          <div class="auteur-nom">Aminata Fofana</div>
+          <div class="auteur-lieu">Maraîchère, Dakar, Sénégal</div>
+        </div>
+      </div>
+    </div>
+    <div class="temoignage">
+      <p class="temoignage-texte">AgroMakers m'a connecté à des acheteurs en Europe pour mon cacao certifié bio. J'ai pu valoriser ma récolte à un prix équitable et investir dans mon verger.</p>
+      <div class="temoignage-auteur">
+        <div class="avatar avatar-terre">KO</div>
+        <div>
+          <div class="auteur-nom">Kwame Osei</div>
+          <div class="auteur-lieu">Cacaoculteur, Kumasi, Ghana</div>
+        </div>
+      </div>
+    </div>
+    <div class="temoignage">
+      <p class="temoignage-texte">La formation sur la conservation des semences et la gestion de l'eau m'a permis de maintenir ma production pendant la dernière saison sèche. Un vrai changement de vie.</p>
+      <div class="temoignage-auteur">
+        <div class="avatar avatar-or">FM</div>
+        <div>
+          <div class="auteur-nom">Fatou Mbaye</div>
+          <div class="auteur-lieu">Agricultrice, Sikasso, Mali</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section id="membership" class="membership">
+  <div class="membership-intro">
+    <div class="badge">Rejoindre AgroMakers</div>
+    <h2 class="section-titre">Devenez <em>membre</em></h2>
+    <p class="section-sous-titre">Intégrez une communauté d'agriculteurs engagés, accédez à nos ressources exclusives et participez à la transformation de l'agriculture.</p>
+
+    <div class="plans">
+      <div class="plan" data-plan="semeur">
+        <div class="plan-badge">Gratuit</div>
+        <div class="plan-nom">🌱 Semeur</div>
+        <div class="plan-prix">0 €<span>/mois</span></div>
+        <ul class="plan-avantages">
+          <li>✓ Accès au forum communautaire</li>
+          <li>✓ Newsletter mensuelle</li>
+          <li>✓ Fiches pratiques de base</li>
+          <li class="inactif">✗ Webinaires exclusifs</li>
+          <li class="inactif">✗ Accompagnement personnalisé</li>
+        </ul>
+        <button class="plan-btn" onclick="choisirPlan('semeur')">Choisir ce plan</button>
+      </div>
+      <div class="plan plan-vedette" data-plan="cultivateur">
+        <div class="plan-badge-vedette">Le plus populaire</div>
+        <div class="plan-nom">🌿 Cultivateur</div>
+        <div class="plan-prix">15 €<span>/mois</span></div>
+        <ul class="plan-avantages">
+          <li>✓ Tout du plan Semeur</li>
+          <li>✓ Webinaires mensuels</li>
+          <li>✓ Bibliothèque complète</li>
+          <li>✓ Groupe privé d'entraide</li>
+          <li class="inactif">✗ Accompagnement personnalisé</li>
+        </ul>
+        <button class="plan-btn plan-btn-vedette" onclick="choisirPlan('cultivateur')">Choisir ce plan</button>
+      </div>
+      <div class="plan" data-plan="paysan">
+        <div class="plan-badge">Premium</div>
+        <div class="plan-nom">🌳 Paysan Expert</div>
+        <div class="plan-prix">39 €<span>/mois</span></div>
+        <ul class="plan-avantages">
+          <li>✓ Tout du plan Cultivateur</li>
+          <li>✓ Accompagnement personnalisé</li>
+          <li>✓ Audit de votre exploitation</li>
+          <li>✓ Accès prioritaire aux événements</li>
+          <li>✓ Certification AgroMakers</li>
+        </ul>
+        <button class="plan-btn" onclick="choisirPlan('paysan')">Choisir ce plan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMULAIRE -->
+  <div class="membership-form-wrap" id="formWrap">
+    <div class="form-header">
+      <div class="form-icon">🌾</div>
+      <h3 id="formTitre">Inscription – Plan Cultivateur</h3>
+      <p id="formDesc">Remplissez vos informations pour rejoindre AgroMakers.</p>
+    </div>
+
+    <div class="form-grille">
+      <div class="champ">
+        <label>Prénom *</label>
+        <input type="text" id="prenom" placeholder="ex : Marie">
+      </div>
+      <div class="champ">
+        <label>Nom *</label>
+        <input type="text" id="nom" placeholder="ex : Dupont">
+      </div>
+      <div class="champ champ-plein">
+        <label>Adresse e-mail *</label>
+        <input type="email" id="email" placeholder="marie@ferme.fr">
+      </div>
+      <div class="champ">
+        <label>Téléphone</label>
+        <input type="tel" id="tel" placeholder="+33 6 00 00 00 00">
+      </div>
+      <div class="champ">
+        <label>Code postal</label>
+        <input type="text" id="cp" placeholder="ex : 44000">
+      </div>
+      <div class="champ champ-plein">
+        <label>Type d'activité *</label>
+        <select id="activite">
+          <option value="">— Sélectionnez —</option>
+          <option>Maraîchage</option>
+          <option>Céréaliculture</option>
+          <option>Arboriculture</option>
+          <option>Élevage</option>
+          <option>Viticulture</option>
+          <option>Passionné / Amateur</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="champ champ-plein">
+        <label>Surface exploitée</label>
+        <select id="surface">
+          <option value="">— Sélectionnez —</option>
+          <option>Moins de 1 ha (jardin / micro-ferme)</option>
+          <option>1 – 5 ha</option>
+          <option>5 – 20 ha</option>
+          <option>20 – 100 ha</option>
+          <option>Plus de 100 ha</option>
+        </select>
+      </div>
+      <div class="champ champ-plein">
+        <label>Pourquoi rejoindre AgroMakers ?</label>
+        <textarea id="motivation" placeholder="Parlez-nous de votre projet, vos objectifs ou vos défis actuels…" rows="4"></textarea>
+      </div>
+      <div class="champ champ-plein">
+        <label class="label-check">
+          <input type="checkbox" id="cgu"> J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de confidentialité</a>
+        </label>
+      </div>
+      <div class="champ champ-plein">
+        <label class="label-check">
+          <input type="checkbox" id="newsletter-check" checked> Recevoir la newsletter AgroMakers (conseils, actualités, événements)
+        </label>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn-soumettre" id="btnSoumettre" onclick="soumettre()">Rejoindre AgroMakers →</button>
+      <p class="form-note">Réponse sous 48h · Aucun engagement</p>
+    </div>
+
+    <!-- CONFIRMATION -->
+    <div class="confirmation" id="confirmation">
+      <div class="confirm-icone">🌿</div>
+      <h3>Bienvenue dans la communauté !</h3>
+      <p>Votre demande a bien été reçue. Notre équipe vous contactera dans les 48h pour finaliser votre adhésion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div id="newsletter" class="newsletter">
+  <h2>Rejoignez la communauté AgroMakers</h2>
+  <p>Conseils saisonniers, fiches pratiques et actualités de l'agriculture vivante — directement dans votre boîte.</p>
+  <div class="newsletter-form">
+    <input type="email" placeholder="votre@email.fr">
+    <button type="button">S'inscrire gratuitement</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Agro<span>Makers</span></div>
+      <p class="footer-desc">Nous accompagnons agriculteurs, maraîchers et passionnés vers une agriculture régénérative, en harmonie avec la nature et le vivant.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Ressources</h5>
+      <ul>
+        <li><a href="#">Guide du débutant</a></li>
+        <li><a href="#">Calendrier des semis</a></li>
+        <li><a href="#">Fiches pratiques</a></li>
+        <li><a href="#">Vidéothèque</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Communauté</h5>
+      <ul>
+        <li><a href="#">Forum agriculteurs</a></li>
+        <li><a href="#">Groupes locaux</a></li>
+        <li><a href="#">Événements</a></li>
+        <li><a href="#">Partenaires</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>À propos</h5>
+      <ul>
+        <li><a href="#">Notre mission</a></li>
+        <li><a href="#">L'équipe</a></li>
+        <li><a href="#">Presse</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bas">
+    <span>© 2025 AgroMakers — Tous droits réservés</span>
+    <span>Fait avec 🌿 pour la terre et ceux qui la cultivent</span>
+  </div>
+</footer>
+
+<script>
+  // Animation au scroll
+  const observateur = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'fadeUp 0.6s ease both';
+        observateur.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.pratique-carte, .culture-item, .etape, .temoignage').forEach(el => {
+    el.style.opacity = '0';
+    observateur.observe(el);
+  });
+
+  // Newsletter
+  document.querySelector('.newsletter-form button').addEventListener('click', function() {
+    const input = document.querySelector('.newsletter-form input');
+    if (input.value.includes('@')) {
+      this.textContent = '✓ Inscription confirmée !';
+      this.style.background = '#4a8c2a';
+      input.value = '';
+      input.placeholder = 'Merci de nous rejoindre !';
+    } else {
+      input.placeholder = 'Entrez un email valide';
+      input.style.borderColor = 'rgba(255,100,100,0.6)';
+    }
+  });
+
+  // Membership plans
+  const planLabels = {
+    semeur: { titre: 'Inscription – Plan Semeur (Gratuit)', desc: 'Bienvenue ! Remplissez vos informations pour rejoindre gratuitement AgroMakers.' },
+    cultivateur: { titre: 'Inscription – Plan Cultivateur (15 €/mois)', desc: 'Super choix ! Remplissez vos informations pour accéder à tous les avantages Cultivateur.' },
+    paysan: { titre: 'Inscription – Plan Paysan Expert (39 €/mois)', desc: 'Excellent ! Notre équipe vous contactera pour personnaliser votre accompagnement.' }
+  };
+
+  function choisirPlan(plan) {
+    document.querySelectorAll('.plan').forEach(p => p.classList.remove('selectionne'));
+    document.querySelector(`[data-plan="${plan}"]`).classList.add('selectionne');
+    document.getElementById('formTitre').textContent = planLabels[plan].titre;
+    document.getElementById('formDesc').textContent = planLabels[plan].desc;
+    const wrap = document.getElementById('formWrap');
+    wrap.classList.add('visible');
+    document.getElementById('confirmation').classList.remove('visible');
+    wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function soumettre() {
+    const champs = [
+      { id: 'prenom', label: 'Prénom' },
+      { id: 'nom', label: 'Nom' },
+      { id: 'email', label: 'Email' },
+      { id: 'activite', label: 'Activité' }
+    ];
+    let ok = true;
+
+    // Clear previous errors
+    document.querySelectorAll('.champ.erreur').forEach(c => c.classList.remove('erreur'));
+    document.querySelectorAll('.erreur-msg').forEach(e => e.remove());
+
+    champs.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      const parent = el.closest('.champ');
+      if (!el.value.trim()) {
+        ok = false;
+        parent.classList.add('erreur');
+        const msg = document.createElement('span');
+        msg.className = 'erreur-msg';
+        msg.textContent = 'Ce champ est requis';
+        parent.appendChild(msg);
+      }
+    });
+
+    // Email validation
+    const email = document.getElementById('email');
+    if (email.value && !email.value.includes('@')) {
+      ok = false;
+      const parent = email.closest('.champ');
+      parent.classList.add('erreur');
+      const msg = document.createElement('span');
+      msg.className = 'erreur-msg';
+      msg.textContent = 'Email invalide';
+      parent.appendChild(msg);
+    }
+
+    if (!document.getElementById('cgu').checked) {
+      ok = false;
+      alert('Veuillez accepter les conditions d\'utilisation pour continuer.');
+    }
+
+    if (ok) {
+      document.querySelector('.form-grille').style.display = 'none';
+      document.querySelector('.form-actions').style.display = 'none';
+      document.getElementById('confirmation').classList.add('visible');
+    }
+  }
+
+  const hamburger = document.getElementById('hamburger');
+  const navMobile = document.getElementById('navMobile');
+
+  hamburger.addEventListener('click', () => {
+    const ouvert = navMobile.classList.toggle('ouvert');
+    hamburger.classList.toggle('ouvert', ouvert);
+    document.body.style.overflow = ouvert ? 'hidden' : '';
+  });
+
+  document.querySelectorAll('.nav-mobile-lien').forEach(lien => {
+    lien.addEventListener('click', () => {
+      navMobile.classList.remove('ouvert');
+      hamburger.classList.remove('ouvert');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+</body>
+</html>
