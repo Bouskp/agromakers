@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+    <script src="./index.js" defer></script>
   </head>
   <body>
     <!-- NAVIGATION -->
@@ -21,7 +22,6 @@
       <ul>
         <li><a href="#apropos">A propos</a></li>
         <li><a href="#formats">nos formats</a></li>
-        <li><a href="#temoignages">Témoignages</a></li>
         <li><a href="#club">Club</a></li>
         <li><a href="#newsletter" class="btn-nav">Rejoindre</a></li>
       </ul>
@@ -32,10 +32,10 @@
 
     <!-- MENU MOBILE -->
     <div class="nav-mobile" id="navMobile">
-      <a href="#pratiques" class="nav-mobile-lien">Pratiques</a>
-      <a href="#cultures" class="nav-mobile-lien">Cultures</a>
-      <a href="#cycle" class="nav-mobile-lien">Le Cycle</a>
-      <a href="#temoignages" class="nav-mobile-lien">Témoignages</a>
+      <a href="#apropos" class="nav-mobile-lien">A propos</a>
+      <a href="#formats" class="nav-mobile-lien">formats</a>
+      <!-- <a href="#temoignages" class="nav-mobile-lien">Témoignages</a> -->
+      <a href="#club" class="nav-mobile-lien">Le club</a>
       <a href="#membership" class="nav-mobile-lien">Membership</a>
       <a href="#newsletter" class="btn-nav-mobile nav-mobile-lien">Rejoindre</a>
     </div>
@@ -554,128 +554,342 @@
     </section>
 
     <!-- MEMBERSHIP -->
-    <section id="club" class="membership">
-      <div class="membership-intro">
-        <div class="badge">Rejoindre AgroMakers</div>
-        <h2 class="section-titre">Devenez <em>membre</em></h2>
+    <section id="club" class="club">
+      <div class="club-header">
+        <div class="badge">Notre communauté</div>
+        <h2 class="section-titre">Rejoignez le Club <em>AgroMakers</em></h2>
         <p class="section-sous-titre">
-          Intégrez une communauté d'agriculteurs engagés, accédez à nos
-          ressources exclusives et participez à la transformation de
-          l'agriculture.
+          Une communauté active de +8 500 agriculteurs et agripreneurs africains
+          qui s'entraident, se forment et grandissent ensemble.
         </p>
+      </div>
 
-        <div class="plans">
-          <div class="plan" data-plan="semeur">
-            <div class="plan-badge">Gratuit</div>
-            <div class="plan-nom">🌱 Semeur</div>
-            <div class="plan-prix">gratuit<span>/mois</span></div>
-            <ul class="plan-avantages">
-              <li>✓ Accès au forum communautaire</li>
-              <li>✓ Newsletter mensuelle</li>
-              <li>✓ Fiches pratiques de base</li>
-              <li class="inactif">✗ Webinaires exclusifs</li>
-              <li class="inactif">✗ Accompagnement personnalisé</li>
-            </ul>
-            <button class="plan-btn" onclick="choisirPlan('semeur')">
-              Choisir ce plan
-            </button>
+      <!-- CE QUE C'EST -->
+      <div class="club-section club-quoi">
+        <div class="club-section-titre">
+          <span class="icone-section">🎯</span>
+          <h3>Ce que c'est</h3>
+        </div>
+        <div class="club-contenu-grille">
+          <div class="club-item">
+            <div class="item-icone">🤝</div>
+            <h4>Un réseau</h4>
+            <p>
+              Connectez-vous à des milliers d'agriculteurs, chercheurs,
+              investisseurs et innovateurs à travers l'Afrique de l'Ouest, du
+              Centre et de l'Est.
+            </p>
           </div>
-          <div class="plan plan-vedette" data-plan="cultivateur">
-            <div class="plan-badge-vedette">Le plus populaire</div>
-            <div class="plan-nom">🌿 Cultivateur</div>
-            <div class="plan-prix">100 000fcfa<span>/mois</span></div>
-            <ul class="plan-avantages">
-              <li>✓ Tout du plan Semeur</li>
-              <li>✓ Webinaires mensuels</li>
-              <li>✓ Bibliothèque complète</li>
-              <li>✓ Groupe privé d'entraide</li>
-              <li class="inactif">✗ Accompagnement personnalisé</li>
-            </ul>
-            <button
-              class="plan-btn plan-btn-vedette"
-              onclick="choisirPlan('cultivateur')"
-            >
-              Choisir ce plan
-            </button>
+          <div class="club-item">
+            <div class="item-icone">📚</div>
+            <h4>Une école</h4>
+            <p>
+              Accédez à des ressources de formation : webinaires, fiches
+              pratiques, vidéos tutoriels, modules en ligne, tous adaptés au
+              contexte africain.
+            </p>
           </div>
-          <div class="plan" data-plan="paysan">
-            <div class="plan-badge">Premium</div>
-            <div class="plan-nom">🌳 Paysan Expert</div>
-            <div class="plan-prix">200 000fcfa<span>/mois</span></div>
-            <ul class="plan-avantages">
-              <li>✓ Tout du plan Cultivateur</li>
-              <li>✓ Accompagnement personnalisé</li>
-              <li>✓ Audit de votre exploitation</li>
-              <li>✓ Accès prioritaire aux événements</li>
-              <li>✓ Certification AgroMakers</li>
-            </ul>
-            <button class="plan-btn" onclick="choisirPlan('paysan')">
-              Choisir ce plan
-            </button>
+          <div class="club-item">
+            <div class="item-icone">🛠️</div>
+            <h4>Des outils</h4>
+            <p>
+              Plateforme de gestion de production, accès aux prix de marché en
+              temps réel, annuaires de fournisseurs et de clients, forum
+              d'entraide.
+            </p>
+          </div>
+          <div class="club-item">
+            <div class="item-icone">💼</div>
+            <h4>Des opportunités</h4>
+            <p>
+              Financements agricoles, appels à projets, partenariats
+              commerciaux, événements réseau et certification AgroMakers pour
+              les plus engagés.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- FORMULAIRE -->
-      <div class="membership-form-wrap" id="formWrap">
+      <!-- POURQUOI REJOINDRE -->
+      <div class="club-section club-pourquoi">
+        <div class="club-section-titre">
+          <span class="icone-section">⭐</span>
+          <h3>Pourquoi rejoindre</h3>
+        </div>
+        <div class="avantages-2col">
+          <div class="avantage-groupe">
+            <h4>Pour votre production</h4>
+            <ul class="avantage-liste">
+              <li>
+                <strong>Augmentez vos rendements</strong> avec des techniques
+                éprouvées adaptées à votre climat
+              </li>
+              <li>
+                <strong>Maîtrisez les risques</strong> : alertes météo,
+                prévention des ravageurs, gestion de l'eau
+              </li>
+              <li>
+                <strong>Accédez aux bonnes semences</strong> et aux intrants de
+                qualité via nos partenaires
+              </li>
+              <li>
+                <strong>Réduisez vos coûts</strong> en optimisant votre gestion
+                et en rejoignant des achats groupés
+              </li>
+            </ul>
+          </div>
+          <div class="avantage-groupe">
+            <h4>Pour votre marché</h4>
+            <ul class="avantage-liste">
+              <li>
+                <strong>Vendez au meilleur prix</strong> : accès direct aux
+                acheteurs et prix de marché transparents
+              </li>
+              <li>
+                <strong>Transformez votre production</strong> : formations à la
+                transformation et à l'ajout de valeur
+              </li>
+              <li>
+                <strong>Exportez facilement</strong> : mise en relation avec
+                acheteurs régionaux et internationaux
+              </li>
+              <li>
+                <strong>Bâtissez votre marque</strong> : certification,
+                packaging, digital marketing
+              </li>
+            </ul>
+          </div>
+          <div class="avantage-groupe">
+            <h4>Pour votre croissance</h4>
+            <ul class="avantage-liste">
+              <li>
+                <strong>Trouvez des financements</strong> : subventions,
+                micro-crédits, fonds d'impact
+              </li>
+              <li>
+                <strong>Professionnalisez votre exploitation</strong> :
+                accompagnement personnalisé et audit
+              </li>
+              <li>
+                <strong>Développez votre business</strong> : business planning,
+                entrepreneuriat, gestion
+              </li>
+              <li>
+                <strong>Impactez votre région</strong> : devenez formateur et
+                leader local
+              </li>
+            </ul>
+          </div>
+          <div class="avantage-groupe">
+            <h4>Pour votre communauté</h4>
+            <ul class="avantage-liste">
+              <li>
+                <strong>Gagnez un revenu stable</strong> et créez de l'emploi
+                dans votre zone
+              </li>
+              <li>
+                <strong>Nourrir votre région</strong> avec une agriculture
+                productive et durable
+              </li>
+              <li>
+                <strong>Inspirer les jeunes</strong> : montrez qu'on peut
+                réussir à la campagne
+              </li>
+              <li>
+                <strong>Protéger l'environnement</strong> : pratiques durables
+                et régénératives
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUI PEUT ÊTRE MEMBRE -->
+      <div class="club-section club-qui">
+        <div class="club-section-titre">
+          <span class="icone-section">👥</span>
+          <h3>Qui peut être membre</h3>
+        </div>
+        <div class="eligibilite-flex">
+          <div class="eligibilite-item">
+            <div class="eligibilite-icone">👨‍🌾</div>
+            <h4>Agriculteurs</h4>
+            <p>
+              Du petit exploitant familial au grand agriculteur commercial, tous
+              les styles d'agriculture sont bienvenues.
+            </p>
+          </div>
+          <div class="eligibilite-item">
+            <div class="eligibilite-icone">👩‍🌾</div>
+            <h4>Femmes rurales</h4>
+            <p>
+              Nous accueillons spécialement les femmes avec des programmes
+              d'accompagnement dédiés et des mentors féminins.
+            </p>
+          </div>
+          <div class="eligibilite-item">
+            <div class="eligibilite-icone">🎓</div>
+            <h4>Jeunes diplômés</h4>
+            <p>
+              Ingénieurs agronomes, vétérinaires, économistes : trouvez votre
+              place dans l'agriculture africaine moderne.
+            </p>
+          </div>
+          <div class="eligibilite-item">
+            <div class="eligibilite-icone">💼</div>
+            <h4>Agripreneurs</h4>
+            <p>
+              Startups agricoles, transformateurs, distributeurs : innovez et
+              grandissez avec nous.
+            </p>
+          </div>
+          <div class="eligibilite-item">
+            <div class="eligibilite-icone">🏫</div>
+            <h4>Chercheurs &amp; Institutions</h4>
+            <p>
+              Universités et centres de recherche : collaborez et diffusez vos
+              innovations au terrain.
+            </p>
+          </div>
+          <div class="eligibilite-item">
+            <div class="eligibilite-icone">💡</div>
+            <h4>Passionnés</h4>
+            <p>
+              Amateurs et hobbyistes : apprenez, cultivez et connectez-vous sans
+              exigences.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLANS & PRIX DISCRETS -->
+      <div class="club-section club-plans">
+        <h3 style="margin-bottom: 2rem; text-align: center">
+          Des formules pour tous
+        </h3>
+        <div class="plans-discrets">
+          <div class="plan-discret">
+            <div class="plan-d-titre">
+              <span class="plan-d-emoji">🌱</span>
+              <h4>Semeur</h4>
+            </div>
+            <ul class="plan-d-features">
+              <li>✓ Accès au forum</li>
+              <li>✓ Newsletter</li>
+              <li>✓ Fiches pratiques</li>
+            </ul>
+          </div>
+          <div class="plan-discret plan-d-vedette">
+            <div class="plan-d-badge">Populaire</div>
+            <div class="plan-d-titre">
+              <span class="plan-d-emoji">🌿</span>
+              <h4>Cultivateur</h4>
+            </div>
+            <ul class="plan-d-features">
+              <li>✓ Tout du Semeur</li>
+              <li>✓ Webinaires mensuels</li>
+              <li>✓ Groupe privé</li>
+              <li>✓ Bibliothèque complète</li>
+            </ul>
+          </div>
+          <div class="plan-discret">
+            <div class="plan-d-titre">
+              <span class="plan-d-emoji">🌳</span>
+              <h4>Expert</h4>
+            </div>
+            <ul class="plan-d-features">
+              <li>✓ Tout du Cultivateur</li>
+              <li>✓ Accompagnement perso</li>
+              <li>✓ Audit exploitation</li>
+              <li>✓ Certification</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA FORMULAIRE -->
+      <div class="club-cta">
+        <h3>Prêt à rejoindre la communauté AgroMakers ?</h3>
+        <p>
+          Remplissez le formulaire ci-dessous. Notre équipe vous répondra dans
+          les 48h.
+        </p>
+        <button class="btn-formulaire" onclick="afficherFormulaire()">
+          Compléter mon profil →
+        </button>
+      </div>
+
+      <!-- FORMULAIRE CACHÉ -->
+      <div class="club-formulaire visible" id="clubFormulaire">
         <div class="form-header">
           <div class="form-icon">🌾</div>
-          <h3 id="formTitre">Inscription – Plan Cultivateur</h3>
-          <p id="formDesc">
-            Remplissez vos informations pour rejoindre AgroMakers.
-          </p>
+          <h3>Rejoignez AgroMakers</h3>
+          <p>Quelques informations pour vous accompagner au mieux</p>
         </div>
 
         <div class="form-grille">
           <div class="champ">
             <label>Prénom *</label>
-            <input type="text" id="prenom" placeholder="ex : Marie" />
+            <input type="text" id="prenom" placeholder="ex : Awa" />
           </div>
           <div class="champ">
             <label>Nom *</label>
-            <input type="text" id="nom" placeholder="ex : Dupont" />
+            <input type="text" id="nom" placeholder="ex : Diallo" />
           </div>
           <div class="champ champ-plein">
             <label>Adresse e-mail *</label>
-            <input type="email" id="email" placeholder="marie@ferme.fr" />
+            <input type="email" id="email" placeholder="vous@exemple.com" />
           </div>
           <div class="champ">
-            <label>Téléphone</label>
-            <input type="tel" id="tel" placeholder="+33 6 00 00 00 00" />
+            <label>Téléphone / WhatsApp</label>
+            <input type="tel" id="tel" placeholder="+221 77 000 00 00" />
           </div>
           <div class="champ">
-            <label>Code postal</label>
-            <input type="text" id="cp" placeholder="ex : 44000" />
+            <label>Pays *</label>
+            <select id="pays">
+              <option value="">— Sélectionnez —</option>
+              <option>Sénégal</option>
+              <option>Côte d'Ivoire</option>
+              <option>Mali</option>
+              <option>Burkina Faso</option>
+              <option>Ghana</option>
+              <option>Cameroun</option>
+              <option>Kenya</option>
+              <option>Ouganda</option>
+              <option>Autre pays africain</option>
+            </select>
           </div>
           <div class="champ champ-plein">
-            <label>Type d'activité *</label>
+            <label>Quel est votre activité principal ? *</label>
             <select id="activite">
               <option value="">— Sélectionnez —</option>
+              <option>Agriculture familiale</option>
+              <option>Agriculture commerciale</option>
               <option>Maraîchage</option>
-              <option>Céréaliculture</option>
               <option>Arboriculture</option>
               <option>Élevage</option>
-              <option>Viticulture</option>
-              <option>Passionné / Amateur</option>
-              <option>Autre</option>
+              <option>Apiculture</option>
+              <option>Transformation agricole</option>
+              <option>Commerce agricole</option>
+              <option>Chercheur / Formateur</option>
+              <option>Passionné / Hobby</option>
             </select>
           </div>
           <div class="champ champ-plein">
-            <label>Surface exploitée</label>
-            <select id="surface">
+            <label>Quelle formule vous intéresse ? *</label>
+            <select id="formule">
               <option value="">— Sélectionnez —</option>
-              <option>Moins de 1 ha (jardin / micro-ferme)</option>
-              <option>1 – 5 ha</option>
-              <option>5 – 20 ha</option>
-              <option>20 – 100 ha</option>
-              <option>Plus de 100 ha</option>
+              <option>Semeur (Gratuit)</option>
+              <option>Cultivateur (15 €/mois)</option>
+              <option>Expert (39 €/mois)</option>
+              <option>Je ne sais pas encore</option>
             </select>
           </div>
           <div class="champ champ-plein">
-            <label>Pourquoi rejoindre AgroMakers ?</label>
+            <label>Parlez-nous de votre projet ou de vos défis</label>
             <textarea
               id="motivation"
-              placeholder="Parlez-nous de votre projet, vos objectifs ou vos défis actuels…"
+              placeholder="Ex : Je cultive 5 ha de maïs et cherche à augmenter mes rendements…"
               rows="4"
             ></textarea>
           </div>
@@ -688,8 +902,8 @@
           </div>
           <div class="champ champ-plein">
             <label class="label-check">
-              <input type="checkbox" id="newsletter-check" checked /> Recevoir
-              la newsletter AgroMakers (conseils, actualités, événements)
+              <input type="checkbox" id="newsletter-check" checked="" />
+              Recevoir les actualités, opportunités et conseils AgroMakers
             </label>
           </div>
         </div>
@@ -704,10 +918,10 @@
         <!-- CONFIRMATION -->
         <div class="confirmation" id="confirmation">
           <div class="confirm-icone">🌿</div>
-          <h3>Bienvenue dans la communauté !</h3>
+          <h3>Bienvenue dans AgroMakers !</h3>
           <p>
-            Votre demande a bien été reçue. Notre équipe vous contactera dans
-            les 48h pour finaliser votre adhésion.
+            Votre profil a bien été créé. Notre équipe vous contactera très
+            bientôt pour discuter de votre accompagnement.
           </p>
         </div>
       </div>
@@ -800,65 +1014,372 @@
       </div>
     </section>
 
-    <!-- NOS FORMATS -->
+    <!-- FORMATS DE CONTENU -->
     <section id="formats" class="formats">
-      <div class="badge">Nos formats</div>
+      <div class="formats-intro">
+        <div class="badge">Contenus &amp; ressources</div>
+        <h2 class="section-titre">Nos formats pour <em>vous</em> inspirer</h2>
+        <p class="section-sous-titre">
+          Du podcast aux webinaires en direct, découvrez comment AgroMakers vous
+          accompagne au quotidien à travers des formats variés et accessibles.
+        </p>
+      </div>
 
-      <h2 class="section-titre">
-        Des contenus et événements pour faire grandir l’
-        <em>écosystème agricole africain</em>
-      </h2>
+      <!-- VEDETTES : PODCAST ET WHATSAPP -->
+      <div class="formats-vedettes">
+        <div class="format-vedette podcast">
+          <div class="vedette-etiquette">📻 Podcast</div>
+          <div class="vedette-visuel">
+            <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="podcastGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#4a8c2a"></stop>
+                  <stop offset="100%" stop-color="#2d5a1b"></stop>
+                </radialGradient>
+              </defs>
+              <rect width="300" height="240" fill="url(#podcastGrad)"></rect>
+              <!-- Ondes sonores -->
+              <circle
+                cx="150"
+                cy="120"
+                r="40"
+                fill="none"
+                stroke="#c9a84c"
+                stroke-width="3"
+                opacity="0.8"
+              ></circle>
+              <circle
+                cx="150"
+                cy="120"
+                r="55"
+                fill="none"
+                stroke="#f5c842"
+                stroke-width="2"
+                opacity="0.5"
+              ></circle>
+              <circle
+                cx="150"
+                cy="120"
+                r="70"
+                fill="none"
+                stroke="#c9a84c"
+                stroke-width="2"
+                opacity="0.3"
+              ></circle>
+              <!-- Microphone -->
+              <rect
+                x="135"
+                y="50"
+                width="30"
+                height="50"
+                rx="15"
+                fill="#c9a84c"
+                opacity="0.9"
+              ></rect>
+              <circle
+                cx="150"
+                cy="45"
+                r="18"
+                fill="#c9a84c"
+                opacity="0.9"
+              ></circle>
+              <!-- Curseur -->
+              <rect
+                x="140"
+                y="160"
+                width="20"
+                height="8"
+                rx="4"
+                fill="#f5c842"
+                opacity="0.8"
+              ></rect>
+              <!-- Badge -->
+              <rect
+                x="20"
+                y="210"
+                width="260"
+                height="18"
+                rx="9"
+                fill="rgba(255,255,255,0.15)"
+              ></rect>
+              <text
+                x="150"
+                y="223"
+                text-anchor="middle"
+                fill="white"
+                font-size="12"
+                font-family="sans-serif"
+                font-weight="bold"
+              >
+                Épisodes gratuits • Hebdo le jeudi
+              </text>
+            </svg>
+          </div>
+          <div class="vedette-contenu">
+            <h3>AgroMakers Podcast</h3>
+            <p>
+              Chaque semaine, rencontrez des agripreneurs africains inspirants,
+              des experts et des innovateurs qui transforment l'agriculture du
+              continent.
+            </p>
+            <div class="vedette-stats">
+              <div class="stat-item">
+                <span class="stat-chiffre">5+</span>
+                <span class="stat-libelle">Épisodes</span>
+              </div>
+            </div>
+            <div class="vedette-actions">
+              <a
+                href="https://www.youtube.com/playlist?list=PLJPMVpGSbEkEUZMvW4ljawX4lpvJgl4V2"
+                target="_blank"
+                class="btn-vedette"
+                >Écouter les épisodes</a
+              >
+              <a
+                href="https://www.youtube.com/@mian_media"
+                class="btn-vedette-sec"
+                target="_blank"
+                >S'abonner →</a
+              >
+            </div>
+          </div>
+        </div>
 
-      <p class="section-sous-titre">
-        AgroMakers propose des formats modernes et accessibles pour informer,
-        connecter et inspirer les acteurs du secteur agricole africain.
-      </p>
+        <div class="format-vedette whatsapp">
+          <div class="vedette-etiquette">💬 WhatsApp</div>
+          <div class="vedette-visuel">
+            <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient
+                  id="whatsappGrad"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#25d366"></stop>
+                  <stop offset="100%" stop-color="#128c3f"></stop>
+                </linearGradient>
+              </defs>
+              <rect width="300" height="240" fill="url(#whatsappGrad)"></rect>
+              <!-- Téléphone -->
+              <rect
+                x="80"
+                y="30"
+                width="140"
+                height="180"
+                rx="15"
+                fill="white"
+              ></rect>
+              <!-- Écran téléphone -->
+              <rect
+                x="90"
+                y="45"
+                width="120"
+                height="155"
+                rx="10"
+                fill="#f0f0f0"
+              ></rect>
+              <!-- Messages -->
+              <rect
+                x="100"
+                y="60"
+                width="75"
+                height="20"
+                rx="4"
+                fill="#e8f5e9"
+              ></rect>
+              <text
+                x="137"
+                y="73"
+                text-anchor="middle"
+                fill="#128c3f"
+                font-size="8"
+                font-family="sans-serif"
+              >
+                Bonjour Mama! 🌱
+              </text>
+              <rect
+                x="100"
+                y="90"
+                width="85"
+                height="32"
+                rx="4"
+                fill="#c9f4d9"
+              ></rect>
+              <text
+                x="142"
+                y="101"
+                text-anchor="middle"
+                fill="#128c3f"
+                font-size="7"
+                font-family="sans-serif"
+              >
+                Retrouvez nos conseils
+              </text>
+              <text
+                x="142"
+                y="112"
+                text-anchor="middle"
+                fill="#128c3f"
+                font-size="7"
+                font-family="sans-serif"
+              >
+                agricoles chaque jour!
+              </text>
+              <rect
+                x="100"
+                y="130"
+                width="70"
+                height="20"
+                rx="4"
+                fill="#e8f5e9"
+              ></rect>
+              <text
+                x="135"
+                y="143"
+                text-anchor="middle"
+                fill="#128c3f"
+                font-size="8"
+                font-family="sans-serif"
+              >
+                À bientôt! 👋
+              </text>
+              <!-- Badge -->
+              <rect
+                x="20"
+                y="210"
+                width="260"
+                height="18"
+                rx="9"
+                fill="rgba(255,255,255,0.15)"
+              ></rect>
+              <text
+                x="150"
+                y="223"
+                text-anchor="middle"
+                fill="white"
+                font-size="12"
+                font-family="sans-serif"
+                font-weight="bold"
+              >
+                Alertes • Conseils • Marché
+              </text>
+            </svg>
+          </div>
+          <div class="vedette-contenu">
+            <h3>Communauté WhatsApp</h3>
+            <p>
+              Recevez quotidiennement des alertes météo, des conseils pratiques,
+              les prix du marché et des échanges en temps réel avec la
+              communauté.
+            </p>
+            <div class="vedette-stats">
+              <div class="stat-item">
+                <span class="stat-chiffre">24/7</span>
+                <span class="stat-libelle">Disponible</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-chiffre">Gratuit</span>
+                <span class="stat-libelle">Pour tous</span>
+              </div>
+            </div>
+            <div class="vedette-actions">
+              <a
+                href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o"
+                target="_blank"
+                class="btn-vedette"
+                >Rejoindre le groupe</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- AUTRES FORMATS EN GRILLE -->
       <div class="formats-grille">
         <div class="format-carte">
-          <div class="format-icone">🎙️</div>
-          <h3>Podcasts</h3>
+          <div class="format-icone">🎥</div>
+          <h3>Webinaires en direct</h3>
           <p>
-            Des conversations inspirantes avec des agriculteurs, experts,
-            investisseurs et innovateurs qui façonnent l’agriculture africaine.
+            Sessions interactives chaque mercredi soir avec experts, agronomes
+            et agripreneurs. Posez vos questions en temps réel.
           </p>
-          <a
-            href="https://www.youtube.com/playlist?list=PLJPMVpGSbEkEUZMvW4ljawX4lpvJgl4V2"
-            class="btn-primaire"
-            >podcasts</a
-          >
+          <div class="format-meta">
+            <span class="meta-badge">Chaque mercredi 19h</span>
+            <span class="meta-badge">Gratuit</span>
+          </div>
+          <a href="#" class="format-lien">Voir les prochains webinaires →</a>
+        </div>
+
+        <div class="format-carte">
+          <div class="format-icone">📚</div>
+          <h3>Fiches pratiques</h3>
+          <p>
+            PDF téléchargeables en français et langues locales : gestion de
+            l'eau, rotation des cultures, gestion des ravageurs.
+          </p>
+          <div class="format-meta">
+            <span class="meta-badge">120+ fiches</span>
+            <span class="meta-badge">Hors ligne</span>
+          </div>
+          <a href="#" class="format-lien">Consulter la bibliothèque →</a>
+        </div>
+
+        <div class="format-carte">
+          <div class="format-icone">📺</div>
+          <h3>Replays &amp; Tutoriels</h3>
+          <p>
+            Tous les webinaires sont enregistrés et disponibles en replay.
+            Apprenez à votre rythme, en vidéo courte ou longue.
+          </p>
+          <div class="format-meta">
+            <span class="meta-badge">300+ vidéos</span>
+            <span class="meta-badge">Sous-titres</span>
+          </div>
+          <a href="#" class="format-lien">Regarder les replays →</a>
+        </div>
+
+        <div class="format-carte">
+          <div class="format-icone">📰</div>
+          <h3>Newsletter hebdo</h3>
+          <p>
+            L'essentiel de l'actualité agricole africaine, les bonnes pratiques
+            et les opportunités de marché chaque lundi matin.
+          </p>
+          <div class="format-meta">
+            <span class="meta-badge">25k abonnés</span>
+            <span class="meta-badge">Gratuit</span>
+          </div>
+          <a href="#" class="format-lien">S'abonner →</a>
         </div>
 
         <div class="format-carte">
           <div class="format-icone">💻</div>
-          <h3>Webinaires</h3>
+          <h3>Cours en ligne</h3>
           <p>
-            Des sessions en ligne pour apprendre, échanger et découvrir des
-            solutions concrètes autour des enjeux agricoles du continent.
+            Modules de formation auto-paced : entrepreneuriat agricole, digital
+            marketing, transformation des produits.
           </p>
+          <div class="format-meta">
+            <span class="meta-badge">18 modules</span>
+            <span class="meta-badge">Certificats</span>
+          </div>
+          <a href="#" class="format-lien">Accéder aux formations →</a>
         </div>
 
         <div class="format-carte">
-          <div class="format-icone">🌍</div>
-          <h3>Événements</h3>
+          <div class="format-icone">🎙️</div>
+          <h3>Interviews &amp; Stories</h3>
           <p>
-            Rencontres, conférences et networking pour créer des opportunités et
-            connecter les acteurs agricoles africains.
+            Portrait audio de femmes et jeunes agripreneurs qui ont transformé
+            leur vie grâce à l'agriculture innovante.
           </p>
-        </div>
-
-        <div class="format-carte">
-          <div class="format-icone"><img src="./wha.svg" /></div>
-          <h3>chaîne WhatsApp</h3>
-          <p>
-            Un canal avec les dernières infos sur le monde agricole et son
-            écosystème.
-          </p>
-          <a
-            href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o"
-            class="btn-primaire"
-            >visiter</a
-          >
+          <div class="format-meta">
+            <span class="meta-badge">85+ stories</span>
+            <span class="meta-badge">Inspirantes</span>
+          </div>
+          <a href="#" class="format-lien">Lire les histoires →</a>
         </div>
       </div>
     </section>
@@ -882,75 +1403,6 @@
         <div class="stat-label">De membres sont des femmes</div>
       </div>
     </div> -->
-
-    <!-- PRATIQUES -->
-    <section id="pratiques">
-      <div class="badge">Ce que nous offrons</div>
-      <h2 class="section-titre">
-        Une plateforme pensée pour <em>l'Afrique</em>
-      </h2>
-      <p class="section-sous-titre">
-        AgroMakers propose des outils, des ressources et un réseau adaptés aux
-        réalités du terrain africain — du petit exploitant au grand agripreneur.
-      </p>
-
-      <div class="pratiques-grille">
-        <div class="pratique-carte">
-          <div class="pratique-icone">🤝</div>
-          <h3>Mise en réseau</h3>
-          <p>
-            Connectez-vous à des milliers d'agriculteurs, coopératives,
-            investisseurs et partenaires à travers toute l'Afrique
-            subsaharienne, sahélienne et côtière.
-          </p>
-        </div>
-        <div class="pratique-carte">
-          <div class="pratique-icone">📱</div>
-          <h3>Ressources numériques</h3>
-          <p>
-            Guides techniques, vidéos en langues locales, fiches pratiques
-            adaptées aux cultures africaines et aux conditions climatiques
-            locales — accessibles hors ligne.
-          </p>
-        </div>
-        <div class="pratique-carte">
-          <div class="pratique-icone">💧</div>
-          <h3>Gestion de l'eau & du climat</h3>
-          <p>
-            Solutions concrètes pour faire face aux défis de la pluviométrie
-            irrégulière : irrigation goutte-à-goutte, conservation des sols,
-            zaï, demi-lunes et cordons pierreux.
-          </p>
-        </div>
-        <div class="pratique-carte">
-          <div class="pratique-icone">📈</div>
-          <h3>Accès aux marchés</h3>
-          <p>
-            Connexion directe avec les acheteurs, les marchés locaux et
-            régionaux, et les circuits d'exportation pour valoriser votre
-            production au juste prix.
-          </p>
-        </div>
-        <div class="pratique-carte">
-          <div class="pratique-icone">🎓</div>
-          <h3>Formation & accompagnement</h3>
-          <p>
-            Webinaires, ateliers en présentiel, mentorat par des experts
-            africains et internationaux pour monter en compétences et
-            professionnaliser votre exploitation.
-          </p>
-        </div>
-        <div class="pratique-carte">
-          <div class="pratique-icone">💰</div>
-          <h3>Financement & investissement</h3>
-          <p>
-            Accès à des opportunités de financement : subventions, microcrédits
-            agricoles, fonds d'impact et mise en relation avec des investisseurs
-            engagés dans l'agri africaine.
-          </p>
-        </div>
-      </div>
-    </section>
 
     <!-- CYCLE -->
     <section id="cycle" class="cycle">
