@@ -1,0 +1,19 @@
+:root {
+  font-size: 62.5%;
+  --primary-color: #60ab32;
+  --secondary-color: #0b4126;
+  --terairy-color: #fda402;
+  --black-color: #343536;
+  --white-color: #eff3eb;
+
+  --title-size: clamp(3rem, 6vw, 6rem);
+  --h1-size: 3rem;
+  --h2-size: 2.5rem;
+  --h3-size: 1.7rem;
+
+  --normal-size: clamp(
+    1.1rem,
+    0.22727272727272727vw + 1.0272727272727273rem,
+    1.3rem
+  );
+}

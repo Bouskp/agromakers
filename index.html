@@ -3,1710 +3,495 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AgroMakers – Agriculture Vivante</title>
-    <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Agromakers</title>
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="script.js" defer></script>
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-    <script src="./index.js" defer></script>
   </head>
   <body>
-    <!-- NAVIGATION -->
-    <nav>
-      <div class="logo">
-        <img src="./AgroMakers.jpg" alt="logo" /><span
-          >Agro <em>Makers</em></span
-        >
+    <header>
+      <div class="navbar">
+        <nav class="nav-container container">
+          <div class="logo">
+            <a href="#">
+              <img src="./images/logo.png" alt="logo agromakers" />
+            </a>
+          </div>
+          <div class="list-container">
+            <ul class="list">
+              <li><a href="#accueil">Accueil</a></li>
+              <li><a href="#apropos">A propos</a></li>
+              <li><a href="#apropos">Mot de la fondatrice</a></li>
+              <li><a href="#formats"> Nos Formats</a></li>
+              <li><a href="#insights">Insights</a></li>
+              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdOh_ZzdNSIS33WaEHMcjdT_8Iet8jPWnepQsIxkhUg6V8RRQ/viewform">Club</a></li>
+            </ul>
+          </div>
+          <div class="btns">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOh_ZzdNSIS33WaEHMcjdT_8Iet8jPWnepQsIxkhUg6V8RRQ/viewform" class="btn btn-primary">Rejoindre la communauté</a>
+            <!-- <a href="#" class="btn btn-secondary">Se Connecter</a> -->
+          </div>
+        </nav>
       </div>
-      <ul>
-        <li><a href="#apropos">A propos</a></li>
-        <li><a href="#formats">nos formats</a></li>
-        <li><a href="#club">Club</a></li>
-        <li><a href="#newsletter" class="btn-nav">Rejoindre</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span>X</span><span></span>
-      </button>
-    </nav>
+    </header>
 
-    <!-- MENU MOBILE -->
-    <div class="nav-mobile" id="navMobile">
-      <a href="#apropos" class="nav-mobile-lien">A propos</a>
-      <a href="#formats" class="nav-mobile-lien">formats</a>
-      <!-- <a href="#temoignages" class="nav-mobile-lien">Témoignages</a> -->
-      <a href="#club" class="nav-mobile-lien">Le club</a>
-      <a href="#membership" class="nav-mobile-lien">Membership</a>
-      <a href="#newsletter" class="btn-nav-mobile nav-mobile-lien">Rejoindre</a>
-    </div>
+    <section class="hero" id="accueil">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="text-title">
+              Accélérer la transformation de
+              <span>l'agriculture africaine</span>
+            </h1>
+            <p class="text-description">
+              Platforme d'information, de connexion, et d'opportunités pour les
+              acteurs de l'agri-business en Afrique.
+            </p>
+          </div>
 
-    <!-- HERO -->
-    <section class="hero" style="padding: 0">
-      <div class="hero-texte">
-        <span class="badge">🌍 La plateforme de l'agriculture africaine</span>
-        <h1>
-          AgroMakers est un espace dédié aux acteurs de l’agriculture africaine.
-        </h1>
-        <p>accélérer la transformation de l'agriculture africaine</p>
-        <div class="hero-actions">
-          <a href="#club" class="btn-primaire">S'inscrire au club</a>
+          <div class="hero-buttons">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOh_ZzdNSIS33WaEHMcjdT_8Iet8jPWnepQsIxkhUg6V8RRQ/viewform" class="btn btn-primary">Rejoindre la communauté</a>
+            <a href="#" class="btn btn-secondary">Se Connecter</a>
+          </div>
         </div>
-      </div>
-      <div class="hero-visuel">
-        <svg
-          class="hero-svg"
-          viewBox="0 0 600 700"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <!-- Ciel -->
-          <rect width="600" height="700" fill="#c8e6a0" />
-          <!-- Collines -->
-          <ellipse cx="150" cy="550" rx="280" ry="180" fill="#4a8c2a" />
-          <ellipse cx="500" cy="580" rx="250" ry="160" fill="#3a7a1a" />
-          <ellipse cx="300" cy="600" rx="400" ry="140" fill="#2d5a1b" />
-          <!-- Sol -->
-          <rect y="580" width="600" height="120" fill="#5c3d1e" />
-          <rect y="620" width="600" height="80" fill="#4a2f12" />
-
-          <!-- Sillons -->
-          <path
-            d="M0 640 Q150 630 300 640 Q450 650 600 640"
-            stroke="#3a2510"
-            stroke-width="3"
-            fill="none"
-            opacity="0.5"
-          />
-          <path
-            d="M0 660 Q150 650 300 660 Q450 670 600 660"
-            stroke="#3a2510"
-            stroke-width="3"
-            fill="none"
-            opacity="0.5"
-          />
-
-          <!-- Soleil -->
-          <circle cx="480" cy="100" r="55" fill="#f5c842" opacity="0.9" />
-          <circle cx="480" cy="100" r="70" fill="#f5c842" opacity="0.15" />
-
-          <!-- Nuages -->
-          <g opacity="0.85">
-            <ellipse cx="100" cy="80" rx="50" ry="22" fill="white" />
-            <ellipse cx="130" cy="70" rx="35" ry="20" fill="white" />
-            <ellipse cx="70" cy="70" rx="30" ry="18" fill="white" />
-          </g>
-          <g opacity="0.7">
-            <ellipse cx="350" cy="130" rx="40" ry="18" fill="white" />
-            <ellipse cx="375" cy="120" rx="28" ry="16" fill="white" />
-            <ellipse cx="325" cy="122" rx="25" ry="14" fill="white" />
-          </g>
-
-          <!-- Grand arbre gauche -->
-          <rect x="70" y="380" width="18" height="160" fill="#5c3d1e" />
-          <ellipse cx="79" cy="350" rx="55" ry="60" fill="#2d5a1b" />
-          <ellipse cx="55" cy="370" rx="38" ry="45" fill="#3a7a1a" />
-          <ellipse cx="105" cy="375" rx="35" ry="40" fill="#4a8c2a" />
-
-          <!-- Petit arbre droite -->
-          <rect x="490" y="450" width="12" height="110" fill="#5c3d1e" />
-          <ellipse cx="496" cy="420" rx="38" ry="45" fill="#2d5a1b" />
-          <ellipse cx="475" cy="438" rx="28" ry="32" fill="#3a7a1a" />
-          <ellipse cx="515" cy="440" rx="25" ry="30" fill="#4a8c2a" />
-
-          <!-- Rangées de blé/céréales -->
-          <g fill="#c9a84c">
-            <!-- Tiges -->
-            <rect x="140" y="540" width="4" height="60" rx="2" />
-            <rect x="160" y="535" width="4" height="65" rx="2" />
-            <rect x="180" y="542" width="4" height="58" rx="2" />
-            <rect x="200" y="538" width="4" height="62" rx="2" />
-            <rect x="220" y="540" width="4" height="60" rx="2" />
-            <rect x="240" y="535" width="4" height="65" rx="2" />
-            <rect x="260" y="543" width="4" height="57" rx="2" />
-            <rect x="280" y="539" width="4" height="61" rx="2" />
-            <rect x="300" y="540" width="4" height="60" rx="2" />
-            <rect x="320" y="534" width="4" height="66" rx="2" />
-            <rect x="340" y="542" width="4" height="58" rx="2" />
-            <rect x="360" y="537" width="4" height="63" rx="2" />
-            <rect x="380" y="540" width="4" height="60" rx="2" />
-            <rect x="400" y="536" width="4" height="64" rx="2" />
-            <rect x="420" y="541" width="4" height="59" rx="2" />
-            <rect x="440" y="538" width="4" height="62" rx="2" />
-          </g>
-          <!-- Épis -->
-          <g fill="#e0bf60" opacity="0.9">
-            <ellipse cx="142" cy="537" rx="5" ry="12" />
-            <ellipse cx="162" cy="532" rx="5" ry="12" />
-            <ellipse cx="182" cy="539" rx="5" ry="12" />
-            <ellipse cx="202" cy="535" rx="5" ry="12" />
-            <ellipse cx="222" cy="537" rx="5" ry="12" />
-            <ellipse cx="242" cy="532" rx="5" ry="12" />
-            <ellipse cx="262" cy="540" rx="5" ry="12" />
-            <ellipse cx="282" cy="536" rx="5" ry="12" />
-            <ellipse cx="302" cy="537" rx="5" ry="12" />
-            <ellipse cx="322" cy="531" rx="5" ry="12" />
-            <ellipse cx="342" cy="539" rx="5" ry="12" />
-            <ellipse cx="362" cy="534" rx="5" ry="12" />
-            <ellipse cx="382" cy="537" rx="5" ry="12" />
-            <ellipse cx="402" cy="533" rx="5" ry="12" />
-            <ellipse cx="422" cy="538" rx="5" ry="12" />
-            <ellipse cx="442" cy="535" rx="5" ry="12" />
-          </g>
-
-          <!-- Maison ferme -->
-          <rect x="230" y="420" width="140" height="120" fill="#f5ede3" />
-          <rect
-            x="230"
-            y="420"
-            width="140"
-            height="120"
-            fill="none"
-            stroke="#5c3d1e"
-            stroke-width="2"
-          />
-          <!-- Toit -->
-          <polygon points="220,420 380,420 300,340" fill="#c9a84c" />
-          <polygon
-            points="220,420 380,420 300,340"
-            fill="none"
-            stroke="#8b6914"
-            stroke-width="2"
-          />
-          <!-- Porte -->
-          <rect x="285" y="490" width="30" height="50" rx="3" fill="#5c3d1e" />
-          <!-- Fenêtres -->
-          <rect
-            x="240"
-            y="440"
-            width="30"
-            height="30"
-            rx="2"
-            fill="#c8e6a0"
-            stroke="#5c3d1e"
-            stroke-width="1.5"
-          />
-          <rect
-            x="330"
-            y="440"
-            width="30"
-            height="30"
-            rx="2"
-            fill="#c8e6a0"
-            stroke="#5c3d1e"
-            stroke-width="1.5"
-          />
-          <!-- Cheminée -->
-          <rect x="320" y="355" width="20" height="35" fill="#8b5e3c" />
-          <!-- Fumée -->
-          <path
-            d="M330 355 Q325 330 335 310 Q340 295 330 280"
-            stroke="rgba(255,255,255,0.6)"
-            stroke-width="3"
-            fill="none"
-            stroke-linecap="round"
-          />
-
-          <!-- Oiseaux lointains -->
-          <path
-            d="M200 180 Q210 170 220 180"
-            stroke="#2d5a1b"
-            stroke-width="2"
-            fill="none"
-            stroke-linecap="round"
-          />
-          <path
-            d="M215 185 Q225 175 235 185"
-            stroke="#2d5a1b"
-            stroke-width="2"
-            fill="none"
-            stroke-linecap="round"
-          />
-          <path
-            d="M250 165 Q260 155 270 165"
-            stroke="#2d5a1b"
-            stroke-width="1.5"
-            fill="none"
-            stroke-linecap="round"
-          />
-
-          <rect
-            x="20"
-            y="300"
-            width="100"
-            height="32"
-            rx="16"
-            fill="rgba(45,90,27,0.85)"
-          />
-          <text
-            x="70"
-            y="321"
-            text-anchor="middle"
-            fill="white"
-            font-size="12"
-            font-family="Georgia, serif"
-            font-style="italic"
-          >
-            Made in Africa
-          </text>
-
-          <rect
-            x="480"
-            y="280"
-            width="105"
-            height="32"
-            rx="16"
-            fill="rgba(201,168,76,0.9)"
-          />
-          <text
-            x="532"
-            y="301"
-            text-anchor="middle"
-            fill="#2d1a00"
-            font-size="12"
-            font-family="Georgia, serif"
-            font-style="italic"
-          >
-            Agri du futur
-          </text>
-        </svg>
       </div>
     </section>
 
-    <!-- A propos -->
     <section id="apropos" class="apropos">
-      <div class="apropos-layout">
-        <div class="apropos-visuel">
-          <svg
-            viewBox="0 0 460 500"
-            xmlns="http://www.w3.org/2000/svg"
-            width="100%"
-            height="100%"
-          >
-            <!-- Fond -->
-            <rect width="460" height="500" fill="#e8f5e0" />
-            <!-- Carte Afrique stylisée -->
-            <path
-              d="M160 60 Q200 40 250 55 Q300 60 320 100 Q350 130 340 180 Q360 210 350 260 Q370 300 355 340 Q340 390 300 420 Q270 450 240 445 Q200 460 175 430 Q140 400 130 360 Q100 320 110 280 Q90 240 105 200 Q95 160 120 130 Q135 90 160 60Z"
-              fill="#4a8c2a"
-              opacity="0.85"
-            />
-            <!-- Détails continent -->
-            <path
-              d="M230 55 Q260 50 280 70 Q310 85 305 115"
-              stroke="#2d5a1b"
-              stroke-width="2"
-              fill="none"
-              opacity="0.5"
-            />
-            <!-- Points villes/membres -->
-            <circle cx="185" cy="180" r="7" fill="#f5c842" />
-            <circle cx="185" cy="180" r="14" fill="#f5c842" opacity="0.25" />
-            <circle cx="240" cy="230" r="9" fill="#f5c842" />
-            <circle cx="240" cy="230" r="18" fill="#f5c842" opacity="0.25" />
-            <circle cx="200" cy="310" r="6" fill="#f5c842" />
-            <circle cx="200" cy="310" r="12" fill="#f5c842" opacity="0.25" />
-            <circle cx="280" cy="270" r="7" fill="#f5c842" />
-            <circle cx="280" cy="270" r="14" fill="#f5c842" opacity="0.25" />
-            <circle cx="160" cy="260" r="5" fill="#f5c842" />
-            <circle cx="160" cy="260" r="10" fill="#f5c842" opacity="0.25" />
-            <circle cx="255" cy="160" r="6" fill="#f5c842" />
-            <circle cx="255" cy="160" r="12" fill="#f5c842" opacity="0.25" />
-            <!-- Lignes de connexion -->
-            <line
-              x1="185"
-              y1="180"
-              x2="240"
-              y2="230"
-              stroke="rgba(245,200,66,0.5)"
-              stroke-width="1.5"
-              stroke-dasharray="4,3"
-            />
-            <line
-              x1="240"
-              y1="230"
-              x2="280"
-              y2="270"
-              stroke="rgba(245,200,66,0.5)"
-              stroke-width="1.5"
-              stroke-dasharray="4,3"
-            />
-            <line
-              x1="240"
-              y1="230"
-              x2="200"
-              y2="310"
-              stroke="rgba(245,200,66,0.5)"
-              stroke-width="1.5"
-              stroke-dasharray="4,3"
-            />
-            <line
-              x1="240"
-              y1="230"
-              x2="160"
-              y2="260"
-              stroke="rgba(245,200,66,0.5)"
-              stroke-width="1.5"
-              stroke-dasharray="4,3"
-            />
-            <line
-              x1="185"
-              y1="180"
-              x2="255"
-              y2="160"
-              stroke="rgba(245,200,66,0.5)"
-              stroke-width="1.5"
-              stroke-dasharray="4,3"
-            />
-            <!-- Labels villes -->
-            <rect
-              x="120"
-              y="158"
-              width="55"
-              height="18"
-              rx="9"
-              fill="rgba(45,90,27,0.85)"
-            />
-            <text
-              x="147"
-              y="171"
-              text-anchor="middle"
-              fill="white"
-              font-size="9"
-              font-family="Georgia, serif"
-            >
-              Dakar
-            </text>
-            <rect
-              x="248"
-              y="208"
-              width="55"
-              height="18"
-              rx="9"
-              fill="rgba(45,90,27,0.85)"
-            />
-            <text
-              x="275"
-              y="221"
-              text-anchor="middle"
-              fill="white"
-              font-size="9"
-              font-family="Georgia, serif"
-            >
-              Abidjan
-            </text>
-            <rect
-              x="288"
-              y="248"
-              width="55"
-              height="18"
-              rx="9"
-              fill="rgba(45,90,27,0.85)"
-            />
-            <text
-              x="315"
-              y="261"
-              text-anchor="middle"
-              fill="white"
-              font-size="9"
-              font-family="Georgia, serif"
-            >
-              Nairobi
-            </text>
-            <rect
-              x="130"
-              y="292"
-              width="60"
-              height="18"
-              rx="9"
-              fill="rgba(45,90,27,0.85)"
-            />
-            <text
-              x="160"
-              y="305"
-              text-anchor="middle"
-              fill="white"
-              font-size="9"
-              font-family="Georgia, serif"
-            >
-              Luanda
-            </text>
-            <!-- Badge flottant -->
-            <rect
-              x="295"
-              y="130"
-              width="130"
-              height="44"
-              rx="12"
-              fill="white"
-              opacity="0.95"
-            />
-            <text
-              x="360"
-              y="149"
-              text-anchor="middle"
-              fill="#2d5a1b"
-              font-size="11"
-              font-family="Georgia, serif"
-              font-weight="bold"
-            >
-              42 pays
-            </text>
-            <text
-              x="360"
-              y="165"
-              text-anchor="middle"
-              fill="#6b7068"
-              font-size="10"
-              font-family="sans-serif"
-            >
-              représentés
-            </text>
-            <!-- Badge bas -->
-            <rect
-              x="80"
-              y="380"
-              width="140"
-              height="44"
-              rx="12"
-              fill="white"
-              opacity="0.95"
-            />
-            <text
-              x="150"
-              y="399"
-              text-anchor="middle"
-              fill="#2d5a1b"
-              font-size="11"
-              font-family="Georgia, serif"
-              font-weight="bold"
-            >
-              8 500+ membres
-            </text>
-            <text
-              x="150"
-              y="415"
-              text-anchor="middle"
-              fill="#6b7068"
-              font-size="10"
-              font-family="sans-serif"
-            >
-              actifs sur le continent
-            </text>
-          </svg>
+      <div class="container apropos-container">
+        <div class="apropos-text">
+          <div class="section-title">
+            <span class="section-desc"> A propos</span>
+            <h2 class="section-title">Qui sommes nous</h2>
+            <p></p>
+          </div>
+          <div class="apropos-desc">
+            <p>
+              L'agriculture africaine présente un potentiel considérable, mais
+              de nombreux projets peinent encore à se développer.Non pas par
+              manque d'opportunités,mais en raison d'un accès limité à
+              l'information stratégique,aux réseaux et aux mécanismes de
+              financement.
+            </p>
+            <p class="gras">Agromakers est né pour répondre à ce défi.</p>
+            <p>
+              Nous construisons une plateforme qui permet aux acteurs de se
+              connecter de manière pertinente et
+              <span class="gras">d'accéder à des opportunités concrètes.</span>
+            </p>
+          </div>
         </div>
-
-        <div class="apropos-texte">
-          <div class="badge">À propos de nous</div>
-          <h2 class="section-titre">Qui sommes-<em>nous</em> ?</h2>
-          <p class="apropos-intro">
-            AgroMakers est la première plateforme communautaire dédiée aux
-            acteurs de l'agriculture africaine. Née de la conviction que le
-            continent a toutes les ressources humaines, naturelles et
-            intellectuelles pour nourrir sa population et rayonner à
-            l'international.
-          </p>
-
-          <div class="apropos-valeurs">
-            <div class="valeur">
-              <div class="valeur-icone">🌍</div>
-              <div>
-                <h4>Notre mission</h4>
-                <p>
-                  Connecter, former et outiller les agriculteurs, agripreneurs
-                  et innovateurs africains pour accélérer la transformation
-                  durable des systèmes alimentaires du continent.
-                </p>
-              </div>
-            </div>
-            <div class="valeur">
-              <div class="valeur-icone">👁️</div>
-              <div>
-                <h4>Notre vision</h4>
-                <p>
-                  Un continent africain où chaque acteur agricole dispose des
-                  ressources, du réseau et des compétences pour construire une
-                  agriculture souveraine, productive et résiliente.
-                </p>
-              </div>
-            </div>
-            <div class="valeur">
-              <div class="valeur-icone">💡</div>
-              <div>
-                <h4>Nos valeurs</h4>
-                <p>
-                  Solidarité panafricaine, innovation locale, valorisation des
-                  savoirs traditionnels, inclusion des femmes et des jeunes, et
-                  impact mesurable sur les communautés rurales.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="apropos-tags">
-            <span class="tag">🌱 Agriculture durable</span>
-            <span class="tag">🤝 Réseau panafricain</span>
-            <span class="tag">📱 Tech agricole</span>
-            <span class="tag">👩‍🌾 Femmes rurales</span>
-            <span class="tag">🌦️ Résilience climatique</span>
-            <span class="tag">📦 Accès aux marchés</span>
-          </div>
+        <div class="apropos-image">
+          <img src="./images/apropos.jpg" alt="image illustration" />
         </div>
       </div>
     </section>
 
-    <!-- MEMBERSHIP -->
-    <section id="club" class="club">
-      <div class="club-header">
-        <div class="badge">Notre communauté</div>
-        <h2 class="section-titre">Rejoignez le Club <em>AgroMakers</em></h2>
-        <p class="section-sous-titre">
-          Une communauté active de +8 500 agriculteurs et agripreneurs africains
-          qui s'entraident, se forment et grandissent ensemble.
-        </p>
-      </div>
-
-      <!-- CE QUE C'EST -->
-      <div class="club-section club-quoi">
-        <div class="club-section-titre">
-          <span class="icone-section">🎯</span>
-          <h3>Ce que c'est</h3>
-        </div>
-        <div class="club-contenu-grille">
-          <div class="club-item">
-            <div class="item-icone">🤝</div>
-            <h4>Un réseau</h4>
-            <p>
-              Connectez-vous à des milliers d'agriculteurs, chercheurs,
-              investisseurs et innovateurs à travers l'Afrique de l'Ouest, du
-              Centre et de l'Est.
-            </p>
-          </div>
-          <div class="club-item">
-            <div class="item-icone">📚</div>
-            <h4>Une école</h4>
-            <p>
-              Accédez à des ressources de formation : webinaires, fiches
-              pratiques, vidéos tutoriels, modules en ligne, tous adaptés au
-              contexte africain.
-            </p>
-          </div>
-          <div class="club-item">
-            <div class="item-icone">🛠️</div>
-            <h4>Des outils</h4>
-            <p>
-              Plateforme de gestion de production, accès aux prix de marché en
-              temps réel, annuaires de fournisseurs et de clients, forum
-              d'entraide.
-            </p>
-          </div>
-          <div class="club-item">
-            <div class="item-icone">💼</div>
-            <h4>Des opportunités</h4>
-            <p>
-              Financements agricoles, appels à projets, partenariats
-              commerciaux, événements réseau et certification AgroMakers pour
-              les plus engagés.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- POURQUOI REJOINDRE -->
-      <div class="club-section club-pourquoi">
-        <div class="club-section-titre">
-          <span class="icone-section">⭐</span>
-          <h3>Pourquoi rejoindre</h3>
-        </div>
-        <div class="avantages-2col">
-          <div class="avantage-groupe">
-            <h4>Pour votre production</h4>
-            <ul class="avantage-liste">
-              <li>
-                <strong>Augmentez vos rendements</strong> avec des techniques
-                éprouvées adaptées à votre climat
-              </li>
-              <li>
-                <strong>Maîtrisez les risques</strong> : alertes météo,
-                prévention des ravageurs, gestion de l'eau
-              </li>
-              <li>
-                <strong>Accédez aux bonnes semences</strong> et aux intrants de
-                qualité via nos partenaires
-              </li>
-              <li>
-                <strong>Réduisez vos coûts</strong> en optimisant votre gestion
-                et en rejoignant des achats groupés
-              </li>
-            </ul>
-          </div>
-          <div class="avantage-groupe">
-            <h4>Pour votre marché</h4>
-            <ul class="avantage-liste">
-              <li>
-                <strong>Vendez au meilleur prix</strong> : accès direct aux
-                acheteurs et prix de marché transparents
-              </li>
-              <li>
-                <strong>Transformez votre production</strong> : formations à la
-                transformation et à l'ajout de valeur
-              </li>
-              <li>
-                <strong>Exportez facilement</strong> : mise en relation avec
-                acheteurs régionaux et internationaux
-              </li>
-              <li>
-                <strong>Bâtissez votre marque</strong> : certification,
-                packaging, digital marketing
-              </li>
-            </ul>
-          </div>
-          <div class="avantage-groupe">
-            <h4>Pour votre croissance</h4>
-            <ul class="avantage-liste">
-              <li>
-                <strong>Trouvez des financements</strong> : subventions,
-                micro-crédits, fonds d'impact
-              </li>
-              <li>
-                <strong>Professionnalisez votre exploitation</strong> :
-                accompagnement personnalisé et audit
-              </li>
-              <li>
-                <strong>Développez votre business</strong> : business planning,
-                entrepreneuriat, gestion
-              </li>
-              <li>
-                <strong>Impactez votre région</strong> : devenez formateur et
-                leader local
-              </li>
-            </ul>
-          </div>
-          <div class="avantage-groupe">
-            <h4>Pour votre communauté</h4>
-            <ul class="avantage-liste">
-              <li>
-                <strong>Gagnez un revenu stable</strong> et créez de l'emploi
-                dans votre zone
-              </li>
-              <li>
-                <strong>Nourrir votre région</strong> avec une agriculture
-                productive et durable
-              </li>
-              <li>
-                <strong>Inspirer les jeunes</strong> : montrez qu'on peut
-                réussir à la campagne
-              </li>
-              <li>
-                <strong>Protéger l'environnement</strong> : pratiques durables
-                et régénératives
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- QUI PEUT ÊTRE MEMBRE -->
-      <div class="club-section club-qui">
-        <div class="club-section-titre">
-          <span class="icone-section">👥</span>
-          <h3>Qui peut être membre</h3>
-        </div>
-        <div class="eligibilite-flex">
-          <div class="eligibilite-item">
-            <div class="eligibilite-icone">👨‍🌾</div>
-            <h4>Agriculteurs</h4>
-            <p>
-              Du petit exploitant familial au grand agriculteur commercial, tous
-              les styles d'agriculture sont bienvenues.
-            </p>
-          </div>
-          <div class="eligibilite-item">
-            <div class="eligibilite-icone">👩‍🌾</div>
-            <h4>Femmes rurales</h4>
-            <p>
-              Nous accueillons spécialement les femmes avec des programmes
-              d'accompagnement dédiés et des mentors féminins.
-            </p>
-          </div>
-          <div class="eligibilite-item">
-            <div class="eligibilite-icone">🎓</div>
-            <h4>Jeunes diplômés</h4>
-            <p>
-              Ingénieurs agronomes, vétérinaires, économistes : trouvez votre
-              place dans l'agriculture africaine moderne.
-            </p>
-          </div>
-          <div class="eligibilite-item">
-            <div class="eligibilite-icone">💼</div>
-            <h4>Agripreneurs</h4>
-            <p>
-              Startups agricoles, transformateurs, distributeurs : innovez et
-              grandissez avec nous.
-            </p>
-          </div>
-          <div class="eligibilite-item">
-            <div class="eligibilite-icone">🏫</div>
-            <h4>Chercheurs &amp; Institutions</h4>
-            <p>
-              Universités et centres de recherche : collaborez et diffusez vos
-              innovations au terrain.
-            </p>
-          </div>
-          <div class="eligibilite-item">
-            <div class="eligibilite-icone">💡</div>
-            <h4>Passionnés</h4>
-            <p>
-              Amateurs et hobbyistes : apprenez, cultivez et connectez-vous sans
-              exigences.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- PLANS & PRIX DISCRETS -->
-      <div class="club-section club-plans">
-        <h3 style="margin-bottom: 2rem; text-align: center">
-          Des formules pour tous
-        </h3>
-        <div class="plans-discrets">
-          <div class="plan-discret">
-            <div class="plan-d-titre">
-              <span class="plan-d-emoji">🌱</span>
-              <h4>Semeur</h4>
-            </div>
-            <ul class="plan-d-features">
-              <li>✓ Accès au forum</li>
-              <li>✓ Newsletter</li>
-              <li>✓ Fiches pratiques</li>
-            </ul>
-          </div>
-          <div class="plan-discret plan-d-vedette">
-            <div class="plan-d-badge">Populaire</div>
-            <div class="plan-d-titre">
-              <span class="plan-d-emoji">🌿</span>
-              <h4>Cultivateur</h4>
-            </div>
-            <ul class="plan-d-features">
-              <li>✓ Tout du Semeur</li>
-              <li>✓ Webinaires mensuels</li>
-              <li>✓ Groupe privé</li>
-              <li>✓ Bibliothèque complète</li>
-            </ul>
-          </div>
-          <div class="plan-discret">
-            <div class="plan-d-titre">
-              <span class="plan-d-emoji">🌳</span>
-              <h4>Expert</h4>
-            </div>
-            <ul class="plan-d-features">
-              <li>✓ Tout du Cultivateur</li>
-              <li>✓ Accompagnement perso</li>
-              <li>✓ Audit exploitation</li>
-              <li>✓ Certification</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- CTA FORMULAIRE -->
-      <div class="club-cta">
-        <h3>Prêt à rejoindre la communauté AgroMakers ?</h3>
-        <p>
-          Remplissez le formulaire ci-dessous. Notre équipe vous répondra dans
-          les 48h.
-        </p>
-        <button class="btn-formulaire" onclick="afficherFormulaire()">
-          Compléter mon profil →
-        </button>
-      </div>
-
-      <!-- FORMULAIRE CACHÉ -->
-      <div class="club-formulaire visible" id="clubFormulaire">
-        <div class="form-header">
-          <div class="form-icon">🌾</div>
-          <h3>Rejoignez AgroMakers</h3>
-          <p>Quelques informations pour vous accompagner au mieux</p>
-        </div>
-
-        <div class="form-grille">
-          <div class="champ">
-            <label>Prénom *</label>
-            <input type="text" id="prenom" placeholder="ex : Awa" />
-          </div>
-          <div class="champ">
-            <label>Nom *</label>
-            <input type="text" id="nom" placeholder="ex : Diallo" />
-          </div>
-          <div class="champ champ-plein">
-            <label>Adresse e-mail *</label>
-            <input type="email" id="email" placeholder="vous@exemple.com" />
-          </div>
-          <div class="champ">
-            <label>Téléphone / WhatsApp</label>
-            <input type="tel" id="tel" placeholder="+221 77 000 00 00" />
-          </div>
-          <div class="champ">
-            <label>Pays *</label>
-            <select id="pays">
-              <option value="">— Sélectionnez —</option>
-              <option>Sénégal</option>
-              <option>Côte d'Ivoire</option>
-              <option>Mali</option>
-              <option>Burkina Faso</option>
-              <option>Ghana</option>
-              <option>Cameroun</option>
-              <option>Kenya</option>
-              <option>Ouganda</option>
-              <option>Autre pays africain</option>
-            </select>
-          </div>
-          <div class="champ champ-plein">
-            <label>Quel est votre activité principal ? *</label>
-            <select id="activite">
-              <option value="">— Sélectionnez —</option>
-              <option>Agriculture familiale</option>
-              <option>Agriculture commerciale</option>
-              <option>Maraîchage</option>
-              <option>Arboriculture</option>
-              <option>Élevage</option>
-              <option>Apiculture</option>
-              <option>Transformation agricole</option>
-              <option>Commerce agricole</option>
-              <option>Chercheur / Formateur</option>
-              <option>Passionné / Hobby</option>
-            </select>
-          </div>
-          <div class="champ champ-plein">
-            <label>Quelle formule vous intéresse ? *</label>
-            <select id="formule">
-              <option value="">— Sélectionnez —</option>
-              <option>Semeur (Gratuit)</option>
-              <option>Cultivateur (15 €/mois)</option>
-              <option>Expert (39 €/mois)</option>
-              <option>Je ne sais pas encore</option>
-            </select>
-          </div>
-          <div class="champ champ-plein">
-            <label>Parlez-nous de votre projet ou de vos défis</label>
-            <textarea
-              id="motivation"
-              placeholder="Ex : Je cultive 5 ha de maïs et cherche à augmenter mes rendements…"
-              rows="4"
-            ></textarea>
-          </div>
-          <div class="champ champ-plein">
-            <label class="label-check">
-              <input type="checkbox" id="cgu" /> J'accepte les
-              <a href="#">conditions d'utilisation</a> et la
-              <a href="#">politique de confidentialité</a>
-            </label>
-          </div>
-          <div class="champ champ-plein">
-            <label class="label-check">
-              <input type="checkbox" id="newsletter-check" checked="" />
-              Recevoir les actualités, opportunités et conseils AgroMakers
-            </label>
-          </div>
-        </div>
-
-        <div class="form-actions">
-          <button class="btn-soumettre" id="btnSoumettre" onclick="soumettre()">
-            Rejoindre AgroMakers →
-          </button>
-          <p class="form-note">Réponse sous 48h · Aucun engagement</p>
-        </div>
-
-        <!-- CONFIRMATION -->
-        <div class="confirmation" id="confirmation">
-          <div class="confirm-icone">🌿</div>
-          <h3>Bienvenue dans AgroMakers !</h3>
-          <p>
-            Votre profil a bien été créé. Notre équipe vous contactera très
-            bientôt pour discuter de votre accompagnement.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MOT FONDATRICE -->
     <section id="fondatrice" class="fondatrice">
-      <div class="fondatrice-layout">
-        <div class="fondatrice-portrait">
-          <div class="portrait-wrap">
-            <img src="./fondatrice.png" alt="fondatrice image" />
+      <div class="container fondatrice-container">
+        <div class="fondatrice-text">
+          <div class="section-title">
+            <span class="section-desc">mot de la fondatrice</span>
+            <h2 class="section-title">Esther L. SORO-MIAN</h2>
           </div>
-          <div class="fondatrice-citation-mobile">
-            <span class="guillemet">❝</span>
-          </div>
-        </div>
-
-        <div class="fondatrice-texte">
-          <div class="badge">Mot de la fondatrice</div>
-          <h2 class="section-titre">Un message <em>du cœur</em></h2>
-
-          <div class="citation-bloc">
-            <span class="guillemet-grand">❝</span>
-            <blockquote>
-              J'ai grandi dans une famille de cultivateurs au Mali. J'ai vu mes
-              parents travailler dur sur une terre généreuse, mais manquer
-              d'accès aux bonnes semences, aux bons marchés, aux bons
-              financements. J'ai vu des récoltes abondantes se perdre faute de
-              chaîne de froid. J'ai vu des jeunes quitter les campagnes, non par
-              manque d'amour pour la terre, mais par manque d'opportunités.
-              <br /><br />
-              C'est cette réalité qui m'a conduite à créer AgroMakers : une
-              plateforme qui place l'agriculteur africain au centre — non pas
-              comme bénéficiaire, mais comme
-              <strong>acteur, innovateur et leader</strong> de sa propre
-              transformation. <br /><br />
-              Aujourd'hui, nous sommes plus de 8 500 membres dans 42 pays. Mais
-              ce n'est qu'un début. Chaque exploitation améliorée, chaque femme
-              autonomisée, chaque jeune qui choisit de rester et d'entreprendre
-              dans l'agriculture — c'est notre victoire collective.
-              <br /><br />
-              Bienvenue dans la communauté AgroMakers. Ensemble, construisons
-              l'agriculture que l'Afrique mérite.
-            </blockquote>
-            <span class="guillemet-fin">❞</span>
-          </div>
-
-          <div class="fondatrice-signature">
-            <div class="signature-trait"></div>
-            <div class="signature-info">
-              <strong>Mme Esther L. SORO-MIAN</strong>
-              <span
-                >Fondatrice &amp; CEO d'AgroMakers ·Abidjan, Côte d'Ivoire</span
-              >
-              <div class="fondatrice-badges">
-                <a
-                  class="f-badge"
-                  href="https://ci.linkedin.com/in/levolotian-esther-soro"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.1c.67-1.27 2.3-2.6 4.74-2.6C22.42 7.6 24 10.02 24 14.1V24h-5v-8.2c0-1.96-.04-4.48-2.73-4.48-2.73 0-3.15 2.13-3.15 4.34V24h-5V8z"
-                    />
-                  </svg>
-                </a>
-                <a
-                  class="f-badge"
-                  href="https://www.youtube.com/playlist?list=PLJPMVpGSbEkEUZMvW4ljawX4lpvJgl4V2"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8zM9.6 15.5v-7l6.2 3.5-6.2 3.5z"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FORMATS DE CONTENU -->
-    <section id="formats" class="formats">
-      <div class="formats-intro">
-        <div class="badge">Contenus &amp; ressources</div>
-        <h2 class="section-titre">Nos formats pour <em>vous</em> inspirer</h2>
-        <p class="section-sous-titre">
-          Du podcast aux webinaires en direct, découvrez comment AgroMakers vous
-          accompagne au quotidien à travers des formats variés et accessibles.
-        </p>
-      </div>
-
-      <!-- VEDETTES : PODCAST ET WHATSAPP -->
-      <div class="formats-vedettes">
-        <div class="format-vedette podcast">
-          <div class="vedette-etiquette">📻 Podcast</div>
-          <div class="vedette-visuel">
-            <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <radialGradient id="podcastGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#4a8c2a"></stop>
-                  <stop offset="100%" stop-color="#2d5a1b"></stop>
-                </radialGradient>
-              </defs>
-              <rect width="300" height="240" fill="url(#podcastGrad)"></rect>
-              <!-- Ondes sonores -->
-              <circle
-                cx="150"
-                cy="120"
-                r="40"
-                fill="none"
-                stroke="#c9a84c"
-                stroke-width="3"
-                opacity="0.8"
-              ></circle>
-              <circle
-                cx="150"
-                cy="120"
-                r="55"
-                fill="none"
-                stroke="#f5c842"
-                stroke-width="2"
-                opacity="0.5"
-              ></circle>
-              <circle
-                cx="150"
-                cy="120"
-                r="70"
-                fill="none"
-                stroke="#c9a84c"
-                stroke-width="2"
-                opacity="0.3"
-              ></circle>
-              <!-- Microphone -->
-              <rect
-                x="135"
-                y="50"
-                width="30"
-                height="50"
-                rx="15"
-                fill="#c9a84c"
-                opacity="0.9"
-              ></rect>
-              <circle
-                cx="150"
-                cy="45"
-                r="18"
-                fill="#c9a84c"
-                opacity="0.9"
-              ></circle>
-              <!-- Curseur -->
-              <rect
-                x="140"
-                y="160"
-                width="20"
-                height="8"
-                rx="4"
-                fill="#f5c842"
-                opacity="0.8"
-              ></rect>
-              <!-- Badge -->
-              <rect
-                x="20"
-                y="210"
-                width="260"
-                height="18"
-                rx="9"
-                fill="rgba(255,255,255,0.15)"
-              ></rect>
-              <text
-                x="150"
-                y="223"
-                text-anchor="middle"
-                fill="white"
-                font-size="12"
-                font-family="sans-serif"
-                font-weight="bold"
-              >
-                Épisodes gratuits • Hebdo le jeudi
-              </text>
-            </svg>
-          </div>
-          <div class="vedette-contenu">
-            <h3>AgroMakers Podcast</h3>
+          <div class="fondatrice-desc">
             <p>
-              Chaque semaine, rencontrez des agripreneurs africains inspirants,
-              des experts et des innovateurs qui transforment l'agriculture du
-              continent.
+              L'agriculture est l'un des secteurs les plus stratégiques pour le
+              développement de l'Afrique. Pourtant trop de projets restent
+              limités par un manque d'accès à l'information, aux ressources et
+              aux bonnes connexions.
             </p>
-            <div class="vedette-stats">
-              <div class="stat-item">
-                <span class="stat-chiffre">5+</span>
-                <span class="stat-libelle">Épisodes</span>
-              </div>
-            </div>
-            <div class="vedette-actions">
-              <a
-                href="https://www.youtube.com/playlist?list=PLJPMVpGSbEkEUZMvW4ljawX4lpvJgl4V2"
-                target="_blank"
-                class="btn-vedette"
-                >Écouter les épisodes</a
-              >
-              <a
-                href="https://www.youtube.com/@mian_media"
-                class="btn-vedette-sec"
-                target="_blank"
-                >S'abonner →</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="format-vedette whatsapp">
-          <div class="vedette-etiquette">💬 WhatsApp</div>
-          <div class="vedette-visuel">
-            <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient
-                  id="whatsappGrad"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stop-color="#25d366"></stop>
-                  <stop offset="100%" stop-color="#128c3f"></stop>
-                </linearGradient>
-              </defs>
-              <rect width="300" height="240" fill="url(#whatsappGrad)"></rect>
-              <!-- Téléphone -->
-              <rect
-                x="80"
-                y="30"
-                width="140"
-                height="180"
-                rx="15"
-                fill="white"
-              ></rect>
-              <!-- Écran téléphone -->
-              <rect
-                x="90"
-                y="45"
-                width="120"
-                height="155"
-                rx="10"
-                fill="#f0f0f0"
-              ></rect>
-              <!-- Messages -->
-              <rect
-                x="100"
-                y="60"
-                width="75"
-                height="20"
-                rx="4"
-                fill="#e8f5e9"
-              ></rect>
-              <text
-                x="137"
-                y="73"
-                text-anchor="middle"
-                fill="#128c3f"
-                font-size="8"
-                font-family="sans-serif"
-              >
-                Bonjour Mama! 🌱
-              </text>
-              <rect
-                x="100"
-                y="90"
-                width="85"
-                height="32"
-                rx="4"
-                fill="#c9f4d9"
-              ></rect>
-              <text
-                x="142"
-                y="101"
-                text-anchor="middle"
-                fill="#128c3f"
-                font-size="7"
-                font-family="sans-serif"
-              >
-                Retrouvez nos conseils
-              </text>
-              <text
-                x="142"
-                y="112"
-                text-anchor="middle"
-                fill="#128c3f"
-                font-size="7"
-                font-family="sans-serif"
-              >
-                agricoles chaque jour!
-              </text>
-              <rect
-                x="100"
-                y="130"
-                width="70"
-                height="20"
-                rx="4"
-                fill="#e8f5e9"
-              ></rect>
-              <text
-                x="135"
-                y="143"
-                text-anchor="middle"
-                fill="#128c3f"
-                font-size="8"
-                font-family="sans-serif"
-              >
-                À bientôt! 👋
-              </text>
-              <!-- Badge -->
-              <rect
-                x="20"
-                y="210"
-                width="260"
-                height="18"
-                rx="9"
-                fill="rgba(255,255,255,0.15)"
-              ></rect>
-              <text
-                x="150"
-                y="223"
-                text-anchor="middle"
-                fill="white"
-                font-size="12"
-                font-family="sans-serif"
-                font-weight="bold"
-              >
-                Alertes • Conseils • Marché
-              </text>
-            </svg>
-          </div>
-          <div class="vedette-contenu">
-            <h3>Communauté WhatsApp</h3>
             <p>
-              Recevez quotidiennement des alertes météo, des conseils pratiques,
-              les prix du marché et des échanges en temps réel avec la
-              communauté.
+              Avec Agromakers, nous avons voulu créer un espace capable de
+              rapprocher les acteurs, de rendre l'information plus utile et de
+              faire émerger des opportunités concrètes.
             </p>
-            <div class="vedette-stats">
-              <div class="stat-item">
-                <span class="stat-chiffre">24/7</span>
-                <span class="stat-libelle">Disponible</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-chiffre">Gratuit</span>
-                <span class="stat-libelle">Pour tous</span>
-              </div>
-            </div>
-            <div class="vedette-actions">
-              <a
-                href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o"
-                target="_blank"
-                class="btn-vedette"
-                >Rejoindre le groupe</a
-              >
-            </div>
+            <p>
+              Notre ambition est claire : contribuer à structurer un écosystème
+              agricole plus dynamique, plus connecté et tourné vers l'avenir.
+            </p>
           </div>
         </div>
-      </div>
-
-      <!-- AUTRES FORMATS EN GRILLE -->
-      <div class="formats-grille">
-        <div class="format-carte">
-          <div class="format-icone">🎥</div>
-          <h3>Webinaires en direct</h3>
-          <p>
-            Sessions interactives chaque mercredi soir avec experts, agronomes
-            et agripreneurs. Posez vos questions en temps réel.
-          </p>
-          <div class="format-meta">
-            <span class="meta-badge">Chaque mercredi 19h</span>
-            <span class="meta-badge">Gratuit</span>
-          </div>
-          <a href="#" class="format-lien">Voir les prochains webinaires →</a>
-        </div>
-
-        <div class="format-carte">
-          <div class="format-icone">📚</div>
-          <h3>Fiches pratiques</h3>
-          <p>
-            PDF téléchargeables en français et langues locales : gestion de
-            l'eau, rotation des cultures, gestion des ravageurs.
-          </p>
-          <div class="format-meta">
-            <span class="meta-badge">120+ fiches</span>
-            <span class="meta-badge">Hors ligne</span>
-          </div>
-          <a href="#" class="format-lien">Consulter la bibliothèque →</a>
-        </div>
-
-        <div class="format-carte">
-          <div class="format-icone">📺</div>
-          <h3>Replays &amp; Tutoriels</h3>
-          <p>
-            Tous les webinaires sont enregistrés et disponibles en replay.
-            Apprenez à votre rythme, en vidéo courte ou longue.
-          </p>
-          <div class="format-meta">
-            <span class="meta-badge">300+ vidéos</span>
-            <span class="meta-badge">Sous-titres</span>
-          </div>
-          <a href="#" class="format-lien">Regarder les replays →</a>
-        </div>
-
-        <div class="format-carte">
-          <div class="format-icone">📰</div>
-          <h3>Newsletter hebdo</h3>
-          <p>
-            L'essentiel de l'actualité agricole africaine, les bonnes pratiques
-            et les opportunités de marché chaque lundi matin.
-          </p>
-          <div class="format-meta">
-            <span class="meta-badge">25k abonnés</span>
-            <span class="meta-badge">Gratuit</span>
-          </div>
-          <a href="#" class="format-lien">S'abonner →</a>
-        </div>
-
-        <div class="format-carte">
-          <div class="format-icone">💻</div>
-          <h3>Cours en ligne</h3>
-          <p>
-            Modules de formation auto-paced : entrepreneuriat agricole, digital
-            marketing, transformation des produits.
-          </p>
-          <div class="format-meta">
-            <span class="meta-badge">18 modules</span>
-            <span class="meta-badge">Certificats</span>
-          </div>
-          <a href="#" class="format-lien">Accéder aux formations →</a>
-        </div>
-
-        <div class="format-carte">
-          <div class="format-icone">🎙️</div>
-          <h3>Interviews &amp; Stories</h3>
-          <p>
-            Portrait audio de femmes et jeunes agripreneurs qui ont transformé
-            leur vie grâce à l'agriculture innovante.
-          </p>
-          <div class="format-meta">
-            <span class="meta-badge">85+ stories</span>
-            <span class="meta-badge">Inspirantes</span>
-          </div>
-          <a href="#" class="format-lien">Lire les histoires →</a>
+        <div class="fondatrice-image">
+          <img src="./images/fondatrice.jpeg" alt="photo de la fondatrice" />
         </div>
       </div>
     </section>
 
-    <!-- STATS
-    <div class="stats">
-      <div class="stat">
-        <span class="stat-num">8 500</span>
-        <div class="stat-label">Membres actifs en Afrique</div>
-      </div>
-      <div class="stat">
-        <span class="stat-num">42</span>
-        <div class="stat-label">Pays représentés</div>
-      </div>
-      <div class="stat">
-        <span class="stat-num">320+</span>
-        <div class="stat-label">Projets agricoles soutenus</div>
-      </div>
-      <div class="stat">
-        <span class="stat-num">60 %</span>
-        <div class="stat-label">De membres sont des femmes</div>
-      </div>
-    </div> -->
+    <section id="formats">
+      <div class="container">
+        <div class="formats-text">
+          <div class="section-title">
+            <span class="section-desc">Nos Formats</span>
+            <h2 class="section-title">
+              Des formats pour informer, connecter, et créer des opportunités
+            </h2>
+          </div>
+          <div class="card-container">
+            <div class="card">
+              <div class="image">
+                <img src="./images/podcasts.jpg" alt="podcast illustration" />
+              </div>
+              <div class="content">
+                <div class="content-title">
+                  <i
+                    class="fa-solid fa-podcast"
+                    style="color: rgb(164, 2, 2)"
+                  ></i>
+                  <span>Podcast</span>
+                </div>
+                <div class="content-desc">
+                  Des échanges avec des acteurs du secteur pour comprendre les
+                  réalités du terrain et les stratégies de développement
+                </div>
+                <div class="button-group">
+                  <a href="https://www.youtube.com/playlist?list=PLJPMVpGSbEkEUZMvW4ljawX4lpvJgl4V2"
+                    ><i
+                      class="fa-brands fa-youtube"
+                      style="color: rgb(164, 2, 2)"
+                    ></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="image">
+                <img src="./images/insights.jpg" alt="insights illustration" />
+              </div>
+              <div class="content">
+                <div class="content-title">
+                  <i
+                    class="fa-solid fa-newspaper"
+                    style="color: rgb(164, 2, 2)"
+                  ></i>
+                  <h3>Actualités & insights</h3>
+                </div>
+                <div class="content-desc">
+                  Une diffusion continue d'actualités, d'analyses et
+                  d'opportunités via nos différents cannaux
+                </div>
+                <div class="button-group">
+                  <a href="https://www.linkedin.com/company/agromakers" target="_blank">
+                    <i class="fa-brands fa-linkedin" style="color: blue"></i>
+                  </a>
 
-    <!-- CYCLE -->
-    <section id="cycle" class="cycle">
-      <div style="text-align: center; max-width: 600px; margin: 0 auto">
-        <div class="badge">Notre approche</div>
-        <h2 class="section-titre">Un accompagnement <em>complet</em></h2>
-        <p class="section-sous-titre">
-          AgroMakers vous accompagne à chaque étape de votre parcours
-          d'agripreneur africain, du démarrage à la montée en échelle.
-        </p>
-      </div>
+                  <a href="https://www.facebook.com/profile.php?id=61589154570878">
+                    <i
+                      class="fa-brands fa-facebook"
+                      style="color: rgb(2, 3, 164)"
+                    ></i>
+                  </a>
 
-      <div class="cycle-etapes" style="margin-top: 3rem">
-        <div class="etape">
-          <div class="etape-num">1</div>
-          <h4>Rejoindre la communauté</h4>
-          <p>
-            Créez votre profil, rejoignez des groupes thématiques et entrez en
-            contact avec des pairs dans votre pays et sur tout le continent.
-          </p>
-        </div>
-        <div class="etape">
-          <div class="etape-num">2</div>
-          <h4>Se former & apprendre</h4>
-          <p>
-            Accédez à des contenus adaptés au contexte africain : techniques
-            locales, gestion climatique, entrepreneuriat agricole et
-            transformation.
-          </p>
-        </div>
-        <div class="etape">
-          <div class="etape-num">3</div>
-          <h4>Développer son projet</h4>
-          <p>
-            Bénéficiez du soutien d'experts, de mentorat, d'outils de gestion et
-            d'une mise en relation avec des financeurs et partenaires
-            stratégiques.
-          </p>
-        </div>
-        <div class="etape">
-          <div class="etape-num">4</div>
-          <h4>Impacter & rayonner</h4>
-          <p>
-            Devenez un acteur de référence, partagez votre expertise, formez à
-            votre tour et contribuez à la transformation agricole du continent.
-          </p>
+                  <a href="https://www.whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o">
+                    <i class="fa-brands fa-whatsapp" style="color: green"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+             <div class="image">
+               <img src="./images/events.jpg" alt="Evenements illustration" />
+             </div>
+             <div class="content">
+               <div class="content-title">
+                 <svg
+                   xmlns="http://www.w3.org/2000/svg"
+                   width="24"
+                   height="24"
+                   fill="none"
+                   stroke="currentColor"
+                   stroke-width="2"
+                   stroke-linecap="round"
+                   stroke-linejoin="round"
+                   class="lucide lucide-calendar-days"
+                 >
+                   <path d="M8 2v4" />
+                   <path d="M16 2v4" />
+                   <rect width="18" height="18" x="3" y="4" rx="2" />
+                   <path d="M3 10h18" />
+                   <path d="M8 14h.01" />
+                   <path d="M12 14h.01" />
+                   <path d="M16 14h.01" />
+                   <path d="M8 18h.01" />
+                   <path d="M12 18h.01" />
+                   <path d="M16 18h.01" />
+                 </svg>
+                 <h3>Evenements</h3>
+               </div>
+               <div class="content-desc">
+                 Des rencontres pour favoriser les échanges, le résautage et les collaborations
+               </div>
+               <div class="button-group">
+                 <a href="" class="btn btn-primary">
+                   Voir le dernier événement
+                 </a>
+               </div>
+             </div>
+           </div>
+
+            <div class="card">
+              <div class="image">
+                <img
+                  src="./images/webinaire.jpg"
+                  alt="webinaire illustration"
+                />
+              </div>
+              <div class="content">
+                <div class="content-title">
+                  <i
+                    class="fa-solid fa-newspaper"
+                    style="color: rgb(164, 2, 2)"
+                  ></i>
+                  <h3>Webinaire</h3>
+                </div>
+                <div class="content-desc">
+                  Des sessions thématiques pour décrypter les enjeux clés et
+                  <!-- apporter des éclairages concretm:                </div> -->
+                <div class="button-group">
+                  <a href="" class="btn btn-primary">
+                    Suivre le dernier webinaire
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- TÉMOIGNAGES -->
-    <!-- <section id="temoignages">
-      <div class="badge">Ils témoignent</div>
-      <h2 class="section-titre">
-        Des agripreneurs <em>africains</em> qui réussissent
-      </h2>
-      <p class="section-sous-titre">
-        De Dakar à Nairobi, d'Abidjan à Kampala — des membres AgroMakers
-        partagent comment la plateforme a transformé leur activité agricole.
-      </p>
+    <section class="ads">
+     <div class="image">
+      <i class="fa-solid fa-chess-king"></i>
+     </div>
+     <div class="text-content">
+         <span class="ads-desc">le club</span>
+         <h3>le club agroMakers</h3>
+         <p class="description">Un cadre plus exclusif pour aller plus loin : échages ciblés, mises en relation qualifiées et accès à des opportunités à forte valeur ajoutée</p>
+     </div>
+     <div class="avantages">
+      <div class="avantages-item">
+       <span><i class="fa-solid fa-arrow-right-to-bracket"></i></span>
+       <p>accès prioritaire aux évènements</p>
+      </div>
+      <div class="avantages-item">
+       <span><i class="fa-solid fa-users"></i></span>
+       <p>Réseau qualifié</p>
+      </div>
+      <div class="avantages-item">
+       <span><i class="fa-solid fa-crown"></i></span>
+       <p>opportunités ciblées</p>
+      </div>
+     </div>
+     <div class="btn-group">
+      <a href="https://forms.gle/n7GAW9HLhayoN7EW9" target="_blank" class="btn btn-secondary">Rejoindre le club</a>
+     </div>
+    </section>
 
-      <div class="temoignages-grille">
-        <div class="temoignage">
-          <p class="temoignage-texte">
-            Grâce à AgroMakers, j'ai pu accéder à un financement pour mon
-            exploitation maraîchère et tripler ma production en un an. Le réseau
-            de mentors est exceptionnel.
-          </p>
-          <div class="temoignage-auteur">
-            <div class="avatar avatar-vert">AF</div>
-            <div>
-              <div class="auteur-nom">Aminata Fofana</div>
-              <div class="auteur-lieu">Maraîchère, Dakar, Sénégal</div>
+    <section id="insights">
+     <div class="container">
+       <div class="formats-text">
+         <div class="section-title">
+           <span class="section-desc">agromakers insights</span>
+           <h2 class="section-title">
+             analyses et decryptages pour mieux comprendre le secteur
+           </h2>
+         </div>
+       </div>
+       <div class="card-container">
+        <div class="card">
+         <div></div>
+          <div class="image">
+            <img src="./images/postImages/post1.jpeg" alt="post illustration" />
+          </div>
+          <div class="content">
+            <div class="button-group">
+              <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/134" target="_blank" class="btn btn-primary"><span>lire la suite</span><i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
-        <div class="temoignage">
-          <p class="temoignage-texte">
-            AgroMakers m'a connecté à des acheteurs en Europe pour mon cacao
-            certifié bio. J'ai pu valoriser ma récolte à un prix équitable et
-            investir dans mon verger.
-          </p>
-          <div class="temoignage-auteur">
-            <div class="avatar avatar-terre">KO</div>
-            <div>
-              <div class="auteur-nom">Kwame Osei</div>
-              <div class="auteur-lieu">Cacaoculteur, Kumasi, Ghana</div>
-            </div>
-          </div>
+        
+       <div class="card">
+        <div></div>
+         <div class="image">
+           <img src="./images/postImages/post2.jpeg" alt="post illustration" />
+         </div>
+         <div class="content">
+           <div class="button-group">
+             <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/135" target="_blank" class="btn btn-primary"><span>lire la suite</span> <i class="fa-solid fa-arrow-right"></i></a>
+           </div>
+         </div>
+       </div>
+
+       <div class="card">
+        <div></div>
+        <div class="image">
+          <img src="./images/postImages/post3.jpeg" alt="post illustration" />
         </div>
-        <div class="temoignage">
-          <p class="temoignage-texte">
-            La formation sur la conservation des semences et la gestion de l'eau
-            m'a permis de maintenir ma production pendant la dernière saison
-            sèche. Un vrai changement de vie.
-          </p>
-          <div class="temoignage-auteur">
-            <div class="avatar avatar-or">FM</div>
-            <div>
-              <div class="auteur-nom">Fatou Mbaye</div>
-              <div class="auteur-lieu">Agricultrice, Sikasso, Mali</div>
-            </div>
+        <div class="content">
+          <div class="button-group">
+            <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/140" target="_blank" class="btn btn-primary"><span>lire la suite</span> <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
-    </section> -->
 
-    <!-- NEWSLETTER -->
-    <div id="newsletter" class="newsletter">
-      <h2>Rejoignez la communauté AgroMakers</h2>
-      <p>
-        Conseils saisonniers, fiches pratiques et actualités de l'agriculture
-        vivante — directement dans votre boîte.
-      </p>
-      <div class="newsletter-form">
-        <input type="email" placeholder="votre@email.fr" />
-        <button type="button">S'inscrire gratuitement</button>
+
+      <div class="card">
+       <div></div>
+       <div class="image">
+         <img src="./images/postImages/post4.jpeg" alt="post illustration" />
+       </div>
+       <div class="content">
+         <div class="button-group">
+           <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/141" target="_blank" class="btn btn-primary"><span>lire la suite</span> <i class="fa-solid fa-arrow-right"></i></a>
+         </div>
+       </div>
+     </div>
+
+
+     <div class="card">
+      <div></div>
+      <div class="image">
+        <img src="./images/postImages/post5.jpeg" alt="post illustration" />
+      </div>
+      <div class="content">
+        <div class="button-group">
+          <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/142" target="_blank" class="btn btn-primary"><span>lire la suite</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
       </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-      <div class="footer-grid">
-        <div>
-          <div class="footer-logo">Agro<span>Makers</span></div>
-          <p class="footer-desc">
-            Vous retrouverez des contenus utiles au quotidien : opportunités,
-            offres, informations clés, initiatives, mises en relation et
-            ressources pratiques.
-          </p>
-        </div>
-        <div class="footer-col">
-          <h5>Ressources</h5>
-          <ul>
-            <li><a href="#">Guide du débutant</a></li>
-            <li><a href="#">Calendrier des semis</a></li>
-            <li><a href="#">Fiches pratiques</a></li>
-            <li><a href="#">Vidéothèque</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>Communauté</h5>
-          <ul>
-            <li><a href="#">Forum agriculteurs</a></li>
-            <li><a href="#">Groupes locaux</a></li>
-            <li><a href="#">Événements</a></li>
-            <li><a href="#">Partenaires</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h5>À propos</h5>
-          <ul>
-            <li><a href="#">Notre mission</a></li>
-            <li><a href="#">L'équipe</a></li>
-            <li><a href="#">Presse</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
+
+    <div class="card">
+     <div></div>
+     <div class="image">
+       <img src="./images/postImages/post6.jpeg" alt="post illustration" />
+     </div>
+     <div class="content">
+       <div class="button-group">
+         <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/143" target="_blank" class="btn btn-primary"><span>lire la suite</span> <i class="fa-solid fa-arrow-right"></i></a>
+       </div>
+     </div>
+   </div>
+
+   <div class="card">
+    <div></div>
+    <div class="image">
+      <img src="./images/postImages/post7.jpeg" alt="post illustration" />
+    </div>
+    <div class="content">
+      <div class="button-group">
+        <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/146" target="_blank" class="btn btn-primary"><span>lire la suite</span> <i class="fa-solid fa-arrow-right"></i></a>
       </div>
-      <div class="footer-bas">
-        <span>© 2025 AgroMakers — Tous droits réservés</span>
-        <span>Fait avec 🌿 pour la terre et ceux qui la cultivent</span>
+    </div>
+  </div>
+
+
+  <div class="card">
+   <div></div>
+   <div class="image">
+     <img src="./images/postImages/post8.jpeg" alt="post illustration" />
+   </div>
+   <div class="content">
+     <div class="button-group">
+       <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/147" target="_blank" class="btn btn-primary"><span>lire la suite</span> <i class="fa-solid fa-arrow-right"></i></a>
+     </div>
+   </div>
+ </div>
+   
       </div>
-    </footer>
+     </div>
+   </section>
 
-    <script>
-      // Animation au scroll
-      const observateur = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.style.animation = 'fadeUp 0.6s ease both'
-              observateur.unobserve(entry.target)
-            }
-          })
-        },
-        { threshold: 0.1 },
-      )
 
-      document
-        .querySelectorAll('.pratique-carte, .culture-item, .etape, .temoignage')
-        .forEach((el) => {
-          el.style.opacity = '0'
-          observateur.observe(el)
-        })
+   <section class="ads second">
+    <div class="image">
+     <img src="" alt="">
+    </div>
+    <div class="text-content">
+        <h3>Rejoingnez Agromakers</h3>
+        <p class="desc">Intégrez un écosystème dédié à l'agriculture et à l'agri-business</p>
+    </div>
+    <div class="btn-group">
+     <a href="https://forms.gle/n7GAW9HLhayoN7EW9" target="_blank" class="btn btn-primary">rejoindre le club</a>
+     <a href="https://forms.gle/n7GAW9HLhayoN7EW9" target="_blank" class="btn btn-secondary"><span><i class="fa-brands fa-whatsapp"></i></span><span>S'abonner sur whatsapp</span></a>
+    </div>
+   </section>
 
-      // Newsletter
-      document
-        .querySelector('.newsletter-form button')
-        .addEventListener('click', function () {
-          const input = document.querySelector('.newsletter-form input')
-          if (input.value.includes('@')) {
-            this.textContent = '✓ Inscription confirmée !'
-            this.style.background = '#4a8c2a'
-            input.value = ''
-            input.placeholder = 'Merci de nous rejoindre !'
-          } else {
-            input.placeholder = 'Entrez un email valide'
-            input.style.borderColor = 'rgba(255,100,100,0.6)'
-          }
-        })
+   <footer>
+    <div class="container">
+    <div class="content-container">
+    <div class="logo-group">
+       <div class="image">
+        <img src="./images/logo.png" alt="logo 2">
+       </div>
+      <p>
+       Accélérer la transformation de l'agriculture africaine
+      </p>
 
-      // Membership plans
-      const planLabels = {
-        semeur: {
-          titre: 'Inscription – Plan Semeur (Gratuit)',
-          desc: 'Bienvenue ! Remplissez vos informations pour rejoindre gratuitement AgroMakers.',
-        },
-        cultivateur: {
-          titre: 'Inscription – Plan Cultivateur (100000 Fcfa/mois)',
-          desc: 'Super choix ! Remplissez vos informations pour accéder à tous les avantages Cultivateur.',
-        },
-        paysan: {
-          titre: 'Inscription – Plan Paysan Expert (200000 Fcfa/mois)',
-          desc: 'Excellent ! Notre équipe vous contactera pour personnaliser votre accompagnement.',
-        },
-      }
+      <div class="links-container">
 
-      function choisirPlan(plan) {
-        document
-          .querySelectorAll('.plan')
-          .forEach((p) => p.classList.remove('selectionne'))
-        document
-          .querySelector(`[data-plan="${plan}"]`)
-          .classList.add('selectionne')
-        document.getElementById('formTitre').textContent =
-          planLabels[plan].titre
-        document.getElementById('formDesc').textContent = planLabels[plan].desc
-        const wrap = document.getElementById('formWrap')
-        wrap.classList.add('visible')
-        document.getElementById('confirmation').classList.remove('visible')
-        wrap.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
+       <a href="https://www.linkedin.com/company/agromakers"><i class="fa-brands fa-linkedin"></i></a>
 
-      function soumettre() {
-        const champs = [
-          { id: 'prenom', label: 'Prénom' },
-          { id: 'nom', label: 'Nom' },
-          { id: 'email', label: 'Email' },
-          { id: 'activite', label: 'Activité' },
-        ]
-        let ok = true
+       <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o"><i class="fa-brands fa-whatsapp"></i></a>
 
-        // Clear previous errors
-        document
-          .querySelectorAll('.champ.erreur')
-          .forEach((c) => c.classList.remove('erreur'))
-        document.querySelectorAll('.erreur-msg').forEach((e) => e.remove())
+       <a href="https://www.facebook.com/profile.php?id=61589154570878"><i class="fa-brands fa-facebook"></i></a>
 
-        champs.forEach(({ id }) => {
-          const el = document.getElementById(id)
-          const parent = el.closest('.champ')
-          if (!el.value.trim()) {
-            ok = false
-            parent.classList.add('erreur')
-            const msg = document.createElement('span')
-            msg.className = 'erreur-msg'
-            msg.textContent = 'Ce champ est requis'
-            parent.appendChild(msg)
-          }
-        })
+       <a href="https://www.youtube.com/playlist?list=PLJPMVpGSbEkEUZMvW4ljawX4lpvJgl4V2"><i class="fa-brands fa-youtube"></i></a>
+      </div>
 
-        // Email validation
-        const email = document.getElementById('email')
-        if (email.value && !email.value.includes('@')) {
-          ok = false
-          const parent = email.closest('.champ')
-          parent.classList.add('erreur')
-          const msg = document.createElement('span')
-          msg.className = 'erreur-msg'
-          msg.textContent = 'Email invalide'
-          parent.appendChild(msg)
-        }
+    </div>
+    <div class="list">
+     <h3>Navigation</h3>
+     <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#formats">Nos Formats</a></li>
+      <li><a href="#club">Le Club</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#apropos">A propos</a></li>
+     </ul>
+    </div>
+    <div class="list">
+     <h3>Ressources</h3>
+     <ul>
+      <li>Podcast</li>
+      <li>Webinaires</li>
+      <li>Evènements</li>
+      <li>FAQ</li>
+     </ul>
+    </div>
+    <div class="list">
+     <h3>A propos</h3>
+     <ul>
+      <li>Qui sommes-nous</li>
+      <li><a href="#fondatrice">Mot de la fondatrice</a></li>
+      <li>Contact</li>
+      <li>Partenariats</li>
+     </ul>
+    </div>
+    <div class="list">
+     <h3>Contacts</h3>
+     <ul>
+      <li><a href="mailto:contact@agromakers.com">contact@agromakers.com</a></li>
+     </ul>
+    </div>
+   </div>
 
-        if (!document.getElementById('cgu').checked) {
-          ok = false
-          alert(
-            "Veuillez accepter les conditions d'utilisation pour continuer.",
-          )
-        }
+   <div class="disclaimer">
+    2026 Agromakers. Tous droits réservés.
+   </div>
+  </div>
 
-        if (ok) {
-          document.querySelector('.form-grille').style.display = 'none'
-          document.querySelector('.form-actions').style.display = 'none'
-          document.getElementById('confirmation').classList.add('visible')
-        }
-      }
-
-      const hamburger = document.getElementById('hamburger')
-      const navMobile = document.getElementById('navMobile')
-
-      hamburger.addEventListener('click', () => {
-        const ouvert = navMobile.classList.toggle('ouvert')
-        hamburger.classList.toggle('ouvert', ouvert)
-        document.body.style.overflow = ouvert ? 'hidden' : ''
-      })
-
-      document.querySelectorAll('.nav-mobile-lien').forEach((lien) => {
-        lien.addEventListener('click', () => {
-          navMobile.classList.remove('ouvert')
-          hamburger.classList.remove('ouvert')
-          document.body.style.overflow = ''
-        })
-      })
-    </script>
+   </footer>
   </body>
 </html>
