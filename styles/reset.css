@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
@@ -68,4 +69,8 @@ button {
 
 i {
   font-size: inherit;
+}
+
+section {
+  scroll-margin-top: 5rem;
 }

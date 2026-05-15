@@ -23,10 +23,10 @@
         <nav class="nav-container container">
           <div class="logo">
             <a href="#">
-              <img src="./images/logo.png" alt="logo agromakers" />
+              <img src="./images/logo2.png" alt="logo agromakers" />
             </a>
           </div>
-          <div class="list-container">
+          <div class="list-container close">
             <ul class="list">
               <li><a href="#accueil">Accueil</a></li>
               <li><a href="#apropos">A propos</a></li>
@@ -37,8 +37,9 @@
             </ul>
           </div>
           <div class="btns">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOh_ZzdNSIS33WaEHMcjdT_8Iet8jPWnepQsIxkhUg6V8RRQ/viewform" class="btn btn-primary">Rejoindre la communauté</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOh_ZzdNSIS33WaEHMcjdT_8Iet8jPWnepQsIxkhUg6V8RRQ/viewform" class="btn btn-primary">Rejoindre le club</a>
             <!-- <a href="#" class="btn btn-secondary">Se Connecter</a> -->
+             <span id="bars"><i class="fa-solid fa-bars"></i></span>
           </div>
         </nav>
       </div>
@@ -59,7 +60,7 @@
           </div>
 
           <div class="hero-buttons">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOh_ZzdNSIS33WaEHMcjdT_8Iet8jPWnepQsIxkhUg6V8RRQ/viewform" class="btn btn-primary">Rejoindre la communauté</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOh_ZzdNSIS33WaEHMcjdT_8Iet8jPWnepQsIxkhUg6V8RRQ/viewform" class="btn btn-primary">Rejoindre le club</a>
             <a href="#" class="btn btn-secondary">Se Connecter</a>
           </div>
         </div>
@@ -91,7 +92,7 @@
           </div>
         </div>
         <div class="apropos-image">
-          <img src="./images/apropos.jpg" alt="image illustration" />
+          <img src="./images/apropos2.jpg" alt="image illustration" />
         </div>
       </div>
     </section>
@@ -165,14 +166,11 @@
             </div>
             <div class="card">
               <div class="image">
-                <img src="./images/insights.jpg" alt="insights illustration" />
+                <img src="./images/insights(2).jpg" alt="insights illustration" />
               </div>
               <div class="content">
                 <div class="content-title">
-                  <i
-                    class="fa-solid fa-newspaper"
-                    style="color: rgb(164, 2, 2)"
-                  ></i>
+                  <i class="fa-solid fa-paperclip"></i>
                   <h3>Actualités & insights</h3>
                 </div>
                 <div class="content-desc">
@@ -200,32 +198,11 @@
 
             <div class="card">
              <div class="image">
-               <img src="./images/events.jpg" alt="Evenements illustration" />
+               <img src="./images/evenements.jpg" alt="Evenements illustration" />
              </div>
              <div class="content">
                <div class="content-title">
-                 <svg
-                   xmlns="http://www.w3.org/2000/svg"
-                   width="24"
-                   height="24"
-                   fill="none"
-                   stroke="currentColor"
-                   stroke-width="2"
-                   stroke-linecap="round"
-                   stroke-linejoin="round"
-                   class="lucide lucide-calendar-days"
-                 >
-                   <path d="M8 2v4" />
-                   <path d="M16 2v4" />
-                   <rect width="18" height="18" x="3" y="4" rx="2" />
-                   <path d="M3 10h18" />
-                   <path d="M8 14h.01" />
-                   <path d="M12 14h.01" />
-                   <path d="M16 14h.01" />
-                   <path d="M8 18h.01" />
-                   <path d="M12 18h.01" />
-                   <path d="M16 18h.01" />
-                 </svg>
+                <i class="fa-solid fa-calendar"></i>
                  <h3>Evenements</h3>
                </div>
                <div class="content-desc">
@@ -242,7 +219,7 @@
             <div class="card">
               <div class="image">
                 <img
-                  src="./images/webinaire.jpg"
+                  src="./images/webinaire1.jpg"
                   alt="webinaire illustration"
                 />
               </div>
@@ -255,13 +232,10 @@
                   <h3>Webinaire</h3>
                 </div>
                 <div class="content-desc">
-                  Des sessions thématiques pour décrypter les enjeux clés et
-                  <!-- apporter des éclairages concretm:                </div> -->
-                <div class="button-group">
-                  <a href="" class="btn btn-primary">
-                    Suivre le dernier webinaire
-                  </a>
-                </div>
+                  Des sessions thématiques pour décrypter les enjeux clés et apporter des éclairages concrets
+              </div>
+              <div class="button-group">
+                <i class="fa-brands fa-google-drive" style="color: var(--primary-color);"></i>
               </div>
             </div>
             
@@ -270,32 +244,39 @@
       </div>
     </section>
 
-    <section class="ads">
-     <div class="image">
-      <i class="fa-solid fa-chess-king"></i>
-     </div>
-     <div class="text-content">
-         <span class="ads-desc">le club</span>
-         <h3>le club agroMakers</h3>
-         <p class="description">Un cadre plus exclusif pour aller plus loin : échages ciblés, mises en relation qualifiées et accès à des opportunités à forte valeur ajoutée</p>
-     </div>
-     <div class="avantages">
-      <div class="avantages-item">
-       <span><i class="fa-solid fa-arrow-right-to-bracket"></i></span>
-       <p>accès prioritaire aux évènements</p>
+    <section class="club-ads">
+      <div class="container club-ads-container">
+        <div class="text-content">
+          <span class="ads-desc">le club</span>
+          <h3>le club agroMakers</h3>
+          <p class="description">Un cadre plus exclusif pour aller plus loin : échages ciblés, mises en relation qualifiées et accès à des opportunités à forte valeur ajoutée</p>
+        </div>
+        <div class="avantages">
+          <div class="avantages-item">
+            <span><i class="fa-solid fa-arrow-right-to-bracket"></i></span>
+            <p>accès prioritaire aux évènements</p>
+          </div>
+          <div class="avantages-item">
+            <span><i class="fa-solid fa-users"></i></span>
+            <p>Réseau qualifié</p>
+          </div>
+          <div class="avantages-item">
+            <span><i class="fa-solid fa-crown"></i></span>
+            <p>opportunités ciblées</p>
+          </div>
+          <div class="avantages-item">
+            <span><i class="fa-solid fa-crown"></i></span>
+            <p>formations spécialisées</p>
+          </div>
+          <div class="avantages-item">
+            <span><i class="fa-solid fa-crown"></i></span>
+            <p>rencontres & panels</p>
+          </div>
+        </div>
+        <div class="btn-group">
+          <a href="https://forms.gle/n7GAW9HLhayoN7EW9" target="_blank" class="btn btn-secondary">Rejoindre le club</a>
+        </div>
       </div>
-      <div class="avantages-item">
-       <span><i class="fa-solid fa-users"></i></span>
-       <p>Réseau qualifié</p>
-      </div>
-      <div class="avantages-item">
-       <span><i class="fa-solid fa-crown"></i></span>
-       <p>opportunités ciblées</p>
-      </div>
-     </div>
-     <div class="btn-group">
-      <a href="https://forms.gle/n7GAW9HLhayoN7EW9" target="_blank" class="btn btn-secondary">Rejoindre le club</a>
-     </div>
     </section>
 
     <section id="insights">
@@ -310,114 +291,25 @@
        </div>
        <div class="card-container">
         <div class="card">
-         <div></div>
+         <div class="gradient"></div>
           <div class="image">
-            <img src="./images/postImages/post1.jpeg" alt="post illustration" />
+            <img src="./images/insights.jpg" alt="post illustration" />
           </div>
           <div class="content">
+            <p class="text-content">
+              Le sous-investissement chronique dans l'agriculture africaine : une bombe à retardement que la crise d'Ormuz vient d'allumer
+            </p>
             <div class="button-group">
-              <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/134" target="_blank" class="btn btn-primary"><span>lire la suite</span><i class="fa-solid fa-arrow-right"></i></a>
+              <a href="https://www.linkedin.com/pulse/le-sous-investissement-chronique-dans-lagriculture-une-soro-mian-m6grf/" target="_blank" class="btn btn-primary"><span>lire la suite</span><i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
-        </div>
-        
-       <div class="card">
-        <div></div>
-         <div class="image">
-           <img src="./images/postImages/post2.jpeg" alt="post illustration" />
-         </div>
-         <div class="content">
-           <div class="button-group">
-             <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/135" target="_blank" class="btn btn-primary"><span>lire la suite</span> <i class="fa-solid fa-arrow-right"></i></a>
-           </div>
-         </div>
-       </div>
-
-       <div class="card">
-        <div></div>
-        <div class="image">
-          <img src="./images/postImages/post3.jpeg" alt="post illustration" />
-        </div>
-        <div class="content">
-          <div class="button-group">
-            <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/140" target="_blank" class="btn btn-primary"><span>lire la suite</span> <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="card">
-       <div></div>
-       <div class="image">
-         <img src="./images/postImages/post4.jpeg" alt="post illustration" />
-       </div>
-       <div class="content">
-         <div class="button-group">
-           <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/141" target="_blank" class="btn btn-primary"><span>lire la suite</span> <i class="fa-solid fa-arrow-right"></i></a>
-         </div>
-       </div>
-     </div>
-
-
-     <div class="card">
-      <div></div>
-      <div class="image">
-        <img src="./images/postImages/post5.jpeg" alt="post illustration" />
-      </div>
-      <div class="content">
-        <div class="button-group">
-          <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/142" target="_blank" class="btn btn-primary"><span>lire la suite</span> <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="card">
-     <div></div>
-     <div class="image">
-       <img src="./images/postImages/post6.jpeg" alt="post illustration" />
-     </div>
-     <div class="content">
-       <div class="button-group">
-         <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/143" target="_blank" class="btn btn-primary"><span>lire la suite</span> <i class="fa-solid fa-arrow-right"></i></a>
-       </div>
-     </div>
-   </div>
-
-   <div class="card">
-    <div></div>
-    <div class="image">
-      <img src="./images/postImages/post7.jpeg" alt="post illustration" />
-    </div>
-    <div class="content">
-      <div class="button-group">
-        <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/146" target="_blank" class="btn btn-primary"><span>lire la suite</span> <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="card">
-   <div></div>
-   <div class="image">
-     <img src="./images/postImages/post8.jpeg" alt="post illustration" />
-   </div>
-   <div class="content">
-     <div class="button-group">
-       <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o/147" target="_blank" class="btn btn-primary"><span>lire la suite</span> <i class="fa-solid fa-arrow-right"></i></a>
-     </div>
-   </div>
- </div>
-   
+        </div> 
       </div>
      </div>
    </section>
 
 
    <section class="ads second">
-    <div class="image">
-     <img src="" alt="">
-    </div>
     <div class="text-content">
         <h3>Rejoingnez Agromakers</h3>
         <p class="desc">Intégrez un écosystème dédié à l'agriculture et à l'agri-business</p>
@@ -429,28 +321,17 @@
    </section>
 
    <footer>
-    <div class="container">
+    <div class="container footer-container">
+      <div class="logo-group">
+        <div class="image">
+         <img src="./images/logo2.png" alt="logo 2">
+        </div>
+       <p>
+        Accélérer la transformation de l'agriculture africaine
+       </p>
+     </div>
+      
     <div class="content-container">
-    <div class="logo-group">
-       <div class="image">
-        <img src="./images/logo.png" alt="logo 2">
-       </div>
-      <p>
-       Accélérer la transformation de l'agriculture africaine
-      </p>
-
-      <div class="links-container">
-
-       <a href="https://www.linkedin.com/company/agromakers"><i class="fa-brands fa-linkedin"></i></a>
-
-       <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o"><i class="fa-brands fa-whatsapp"></i></a>
-
-       <a href="https://www.facebook.com/profile.php?id=61589154570878"><i class="fa-brands fa-facebook"></i></a>
-
-       <a href="https://www.youtube.com/playlist?list=PLJPMVpGSbEkEUZMvW4ljawX4lpvJgl4V2"><i class="fa-brands fa-youtube"></i></a>
-      </div>
-
-    </div>
     <div class="list">
      <h3>Navigation</h3>
      <ul>
@@ -486,11 +367,23 @@
      </ul>
     </div>
    </div>
+  </div>
+
+
+   <div class="links-container">
+
+    <a href="https://www.linkedin.com/company/agromakers"><i class="fa-brands fa-linkedin"></i></a>
+
+    <a href="https://whatsapp.com/channel/0029VbCR4qX0rGiFZyuq8Z0o"><i class="fa-brands fa-whatsapp"></i></a>
+
+    <a href="https://www.facebook.com/profile.php?id=61589154570878"><i class="fa-brands fa-facebook"></i></a>
+
+    <a href="https://www.youtube.com/playlist?list=PLJPMVpGSbEkEUZMvW4ljawX4lpvJgl4V2"><i class="fa-brands fa-youtube"></i></a>
+   </div>
 
    <div class="disclaimer">
     2026 Agromakers. Tous droits réservés.
    </div>
-  </div>
 
    </footer>
   </body>
